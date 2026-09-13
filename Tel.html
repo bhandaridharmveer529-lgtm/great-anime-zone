@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Great.Anime Zone</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0e14;
+            color: #ffffff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 15px;
+        }
+        .banner-img {
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 15px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .title {
+            text-align: center;
+            color: #ff9900;
+            margin-bottom: 5px;
+            font-size: 22px;
+        }
+        .lang-tag {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        .lang-badge {
+            background: #1a2332;
+            color: #00f2fe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #00f2fe;
+        }
+        
+        /* Auto Responsive Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            border: 1px solid #00f2fe;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+        }
+
+        /* Server Switch Button Styling */
+        .server-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            background: rgba(11, 14, 20, 0.85);
+            color: #00f2fe;
+            border: 1px solid #00f2fe;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+            backdrop-filter: blur(4px);
+        }
+        .server-btn:hover {
+            background: #00f2fe;
+            color: #000;
+        }
+
+        #videoPlayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Report Button */
+        .report-btn {
+            background: #ff4757;
+            color: #ffffff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+            font-size: 14px;
+        }
+        .report-btn:hover {
+            background: #ff6b81;
+        }
+
+        .season-dropdown {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0 10px 0;
+            background: #121824;
+            color: #fff;
+            border: 1px solid #00f2fe;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+        .season-download-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .season-dl-btn {
+            background: #28a745;
+            color: #ffffff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
+        }
+        .ep-section-title {
+            color: #00f2fe;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        .ep-card {
+            background: #121824;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #1a2332;
+        }
+        .ep-card span {
+            font-size: 14px;
+        }
+        .btn-box {
+            display: flex;
+            gap: 6px;
+        }
+        .ep-btn {
+            background: #00f2fe;
+            color: #000;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .dl-btn {
+            background: #ff4757;
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="animeBanner" src="" class="banner-img" alt="Anime Banner">
+
+    <h1 id="animeTitle" class="title">Loading...</h1>
+    
+    <div class="lang-tag">
+        Language: <span id="animeLang" class="lang-badge">Hindi / English</span>
+    </div>
+  
+    <!-- Video Player Container with Server Overlay Button -->
+    <div class="video-container">
+        <button id="serverToggleBtn" class="server-btn" onclick="toggleServer()">
+            🔄 Switch Server (<span id="serverText">Server 1</span>)
+        </button>
+        <!-- Sandboxed iframe to prevent ad-redirects -->
+        <iframe 
+            id="videoPlayer" 
+            src="about:blank" 
+            sandbox="allow-scripts allow-same-origin allow-forms" 
+            allow="autoplay; fullscreen; picture-in-picture; accelerometer; gyroscope" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Telegram Report Broken Link Button -->
+    <a id="reportBtn" href="#" target="_blank" class="report-btn">
+        ⚠️ Report Broken Link (Telegram)
+    </a>
+
+    <!-- Season Dropdown -->
+    <select id="seasonSelect" class="season-dropdown" onchange="changeSeason()"></select>
+
+    <!-- Zip Download Button -->
+    <div class="season-download-box">
+        <a id="seasonDownloadBtn" href="#" target="_blank" class="season-dl-btn">
+            📥 Download Full Season Zip
+        </a>
+    </div>
+
+    <h3 id="epTitle" class="ep-section-title">Episodes</h3>
+    <div class="episodes-list" id="episodesContainer"></div>
+
+    <script src="episodes.js"></script>
+
+    <script>
+        var telegramUsername = "desiking_123";
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var rawId = urlParams.get('id') || urlParams.get('anime');
+
+        var currentAnime = null;
+        var currentVideoUrl = null;
+        var currentEpNameGlobal = "Episode";
+        var currentServerIndex = 0;
+
+        if (rawId) {
+            var cleanId = rawId.toLowerCase().trim();
+            for (var key in allAnimeData) {
+                var cleanKey = key.toLowerCase().trim();
+                if (cleanKey === cleanId || cleanKey.replace(/-/g, ' ') === cleanId.replace(/-/g, ' ')) {
+                    currentAnime = allAnimeData[key];
+                    break;
+                }
+            }
+        }
+
+        function loadAnimeDetails() {
+            if (currentAnime) {
+                document.getElementById('animeTitle').innerText = currentAnime.title;
+                document.getElementById('animeBanner').src = currentAnime.banner;
+                document.getElementById('animeLang').innerText = currentAnime.lang || "Hindi / English";
+
+                var seasonSelect = document.getElementById("seasonSelect");
+                var seasonZipBtn = document.getElementById("seasonDownloadBtn");
+                var epContainer = document.getElementById("episodesContainer");
+
+                if (currentAnime.seasons) {
+                    seasonSelect.style.display = "block";
+                    seasonZipBtn.style.display = "block";
+                    seasonSelect.innerHTML = "";
+
+                    for (var seasonKey in currentAnime.seasons) {
+                        var option = document.createElement("option");
+                        option.value = seasonKey;
+                        option.innerText = currentAnime.seasons[seasonKey].seasonName;
+                        seasonSelect.appendChild(option);
+                    }
+                    changeSeason();
+                } 
+                else {
+                    seasonSelect.style.display = "none";
+                    epContainer.innerHTML = "";
+
+                    if (currentAnime.watch) {
+                        playVideo(currentAnime.watch, "Episode");
+                    }
+                    if (currentAnime.download) {
+                        seasonZipBtn.style.display = "block";
+                        seasonZipBtn.href = currentAnime.download;
+                        seasonZipBtn.innerText = "📥 Download Video / Zip";
+                    }
+                }
+            } else {
+                document.getElementById('animeTitle').innerText = "Anime Not Found!";
+            }
+        }
+
+        function changeSeason() {
+            if (!currentAnime || !currentAnime.seasons) return;
+
+            var selectedSeason = document.getElementById("seasonSelect").value;
+            var container = document.getElementById("episodesContainer");
+            var seasonData = currentAnime.seasons[selectedSeason];
+            var zipBox = document.querySelector(".season-download-box");
+
+            container.innerHTML = "";
+
+            if (seasonData) {
+                if (Array.isArray(seasonData.seasonZip)) {
+                    var zipHTML = "";
+                    for (var z = 0; z < seasonData.seasonZip.length; z++) {
+                        zipHTML += '<a href="' + seasonData.seasonZip[z].link + '" target="_blank" class="season-dl-btn" style="margin-bottom:8px;">' + seasonData.seasonZip[z].name + '</a>';
+                    }
+                    zipBox.innerHTML = zipHTML;
+                } 
+                else {
+                    zipBox.innerHTML = '<a href="' + seasonData.seasonZip + '" target="_blank" class="season-dl-btn">📥 Download Full Season Zip</a>';
+                }
+
+                if (seasonData.episodes && seasonData.episodes.length > 0) {
+                    playVideo(seasonData.episodes[0].watch, seasonData.episodes[0].ep);
+                }
+
+                var list = seasonData.episodes;
+                for (var i = 0; i < list.length; i++) {
+                    var item = list[i];
+                    var dlLink = Array.isArray(item.download) ? item.download[0] : item.download;
+
+                    container.innerHTML += '<div class="ep-card">' +
+                        '<span><b>' + item.ep + ':</b> ' + item.title + '</span>' +
+                        '<div class="btn-box">' +
+                            '<button class="ep-btn" onclick="playEpisode(' + i + ')">Watch</button>' +
+                            '<a href="' + dlLink + '" target="_blank" class="dl-btn">Download</a>' +
+                        '</div>' +
+                    '</div>';
+                }
+            }
+        }
+
+        function playEpisode(index) {
+            var selectedSeason = document.getElementById("seasonSelect").value;
+            var seasonData = currentAnime.seasons[selectedSeason];
+            if (seasonData && seasonData.episodes[index]) {
+                var ep = seasonData.episodes[index];
+                playVideo(ep.watch, ep.ep);
+            }
+        }
+
+        // Server Switch Logic (Supports both Arrays and String links)
+        function toggleServer() {
+            if (!currentVideoUrl) return;
+
+            if (Array.isArray(currentVideoUrl)) {
+                if (currentVideoUrl.length <= 1) return;
+                currentServerIndex = (currentServerIndex + 1) % currentVideoUrl.length;
+            } else {
+                currentServerIndex = currentServerIndex === 0 ? 1 : 0;
+            }
+
+            loadCurrentServer();
+        }
+
+        function loadCurrentServer() {
+            var player = document.getElementById("videoPlayer");
+            var serverText = document.getElementById("serverText");
+
+            if (Array.isArray(currentVideoUrl)) {
+                player.src = currentVideoUrl[currentServerIndex] || currentVideoUrl[0];
+                serverText.innerText = "Server " + (currentServerIndex + 1);
+            } else {
+                if (currentServerIndex === 1 && typeof currentVideoUrl === 'string') {
+                    player.src = currentVideoUrl.replace("morencius.com", "doodstream.com");
+                    serverText.innerText = "Server 2";
+                } else {
+                    player.src = currentVideoUrl;
+                    serverText.innerText = "Server 1";
+                }
+            }
+        }
+
+        function playVideo(videoData, epName) {
+            currentVideoUrl = videoData;
+            currentEpNameGlobal = epName || "Episode";
+            currentServerIndex = 0; // Reset to Server 1 on new episode
+
+            loadCurrentServer();
+
+            var animeName = currentAnime ? currentAnime.title : "Anime";
+            var message = 'Hello Admin, "' + animeName + '" ka ' + currentEpNameGlobal + ' chal nahi raha hai. Kripya fix karein!';
+            var reportBtn = document.getElementById("reportBtn");
+            if (reportBtn) {
+                reportBtn.href = "https://t.me/" + telegramUsername + "?text=" + encodeURIComponent(message);
+            }
+        }
+
+        loadAnimeDetails();
+    </script>
+
+</body>
+</html>

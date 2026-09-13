@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great.Anime Zone</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0e14;
+            color: #ffffff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 15px;
+        }
+        /* Header */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #1a2332;
+            margin-bottom: 15px;
+        }
+        .nav-logo {
+            color: #00f2fe;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .hd-badge {
+            background: #b829e3;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        /* Auto Slider Box */
+        .slider-container {
+            position: relative;
+            border: 1px solid #00f2fe;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #121824;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+        }
+        .slider-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 230px;
+        }
+        .slider-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .popular-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff2a5f;
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 6px;
+            z-index: 2;
+        }
+        .slider-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(11, 14, 20, 0.95));
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .slider-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .slider-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .watch-now-btn {
+            background: #00f2fe;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .lang-border-badge {
+            border: 1px solid #00f2fe;
+            color: #00f2fe;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            background: rgba(0,0,0,0.5);
+        }
+
+        /* Section Title */
+        .section-header {
+            color: #00f2fe;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .section-header span {
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        /* Anime Grid */
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .grid-card {
+            background: #121824;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 180px;
+        }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .grid-lang-tag {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: #000;
+            color: #00f2fe;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 7px;
+            border-radius: 4px;
+            border: 1px solid #00f2fe;
+        }
+        .card-info {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+        .card-title {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-btn {
+            background: #00f2fe;
+            color: #000;
+            text-align: center;
+            padding: 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Header -->
+    <div class="navbar">
+        <div class="nav-logo">Great.Anime Zone</div>
+        <div class="hd-badge">HD DUBBED</div>
+    </div>
+
+    <!-- Auto Slider (Every 3 Seconds) -->
+    <div class="slider-container">
+        <div class="slider-img-wrap">
+            <div class="popular-tag">🔥 POPULAR</div>
+            <img src="" id="slideImg" class="slider-img" alt="Anime Slider">
+            <div class="slider-overlay">
+                <div class="slider-title" id="slideTitle">Loading...</div>
+                <div class="slider-bottom">
+                    <a href="#" id="slideWatchBtn" class="watch-now-btn">▶ WATCH NOW</a>
+                    <div class="lang-border-badge" id="slideLang">Hin + Eng</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Title -->
+    <div class="section-header">
+        <span>|</span> TRENDING ANIME
+    </div>
+
+    <!-- Grid Cards -->
+    <div class="anime-grid" id="animeGrid"></div>
+
+    <script src="episodes.js"></script>
+    <script>
+        var grid = document.getElementById('animeGrid');
+        var keys = [];
+
+        if (typeof allAnimeData !== 'undefined') {
+            keys = Object.keys(allAnimeData);
+
+            // Populate Grid Section
+            for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                var anime = allAnimeData[key];
+                
+                var shortLang = "Hin";
+                if (anime.lang && anime.lang.toLowerCase().includes("english")) {
+                    shortLang = "Hin+Eng";
+                }
+
+                grid.innerHTML += 
+                    '<a href="tel.html?id=' + encodeURIComponent(key) + '" class="grid-card">' +
+                        '<div class="card-img-wrap">' +
+                            '<span class="grid-lang-tag">' + shortLang + '</span>' +
+                            '<img src="' + anime.banner + '" class="card-img" alt="' + anime.title + '">' +
+                        '</div>' +
+                        '<div class="card-info">' +
+                            '<div class="card-title">' + anime.title + '</div>' +
+                            '<div class="card-btn">WATCH NOW</div>' +
+                        '</div>' +
+                    '</a>';
+            }
+
+            // Auto Slider Logic (3 Second Timer)
+            var currentSlideIndex = 0;
+            function updateSlider() {
+                if (keys.length === 0) return;
+                var currentKey = keys[currentSlideIndex];
+                var anime = allAnimeData[currentKey];
+
+                document.getElementById('slideImg').src = anime.banner;
+                document.getElementById('slideTitle').innerText = anime.title;
+                document.getElementById('slideWatchBtn').href = 'tel.html?id=' + encodeURIComponent(currentKey);
+                
+                var langText = "Hin + Eng";
+                if (anime.lang) {
+                    langText = anime.lang.replace("Dubbed", "").trim();
+                }
+                document.getElementById('slideLang').innerText = langText;
+
+                currentSlideIndex = (currentSlideIndex + 1) % keys.length;
+            }
+
+            updateSlider();
+            setInterval(updateSlider, 3000); // 3 सेकंड में ऑटो-स्लाइड
+        }
+    </script>
+
+</body>
+</html>
