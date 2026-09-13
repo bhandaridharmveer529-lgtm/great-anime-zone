@@ -1,0 +1,33 @@
+name: Auto Scrape & Heal Anime Episodes
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  auto-update-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Required Libraries
+        run: pip install requests beautifulsoup4
+
+      - name: Run Auto Scraper & Healing Script
+        run: python update_anime.py
+
+      - name: Auto Commit & Push to GitHub
+        run: |
+          git config --global user.name "AnimeBot"
+          git config --global user.email "bot@greatanimezone.com"
+          git add episodes.js
+          git commit -m "Auto-updated episodes.js with self-healing links" || exit 0
+          git push
+          
