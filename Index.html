@@ -167,6 +167,21 @@
             border-radius: 4px;
             border: 1px solid #00f2fe;
         }
+        
+        /* Latest Episode Badge Styling */
+        .latest-ep-badge {
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            background: #e50914;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+        }
+
         .card-info {
             padding: 10px;
             display: flex;
@@ -229,19 +244,32 @@
     <script src="episodes.js"></script>
     <script>
         var grid = document.getElementById('animeGrid');
-        var keys = [];
 
         if (typeof allAnimeData !== 'undefined') {
-            keys = Object.keys(allAnimeData);
+            // 1. Data ko Array me convert karke latest updated_at ke hisab se SORT karna
+            var animeList = Object.entries(allAnimeData).map(function(item) {
+                return { key: item[0], data: item[1] };
+            });
 
-            // Populate Grid Section
-            for (var i = 0; i < keys.length; i++) {
-                var key = keys[i];
-                var anime = allAnimeData[key];
+            animeList.sort(function(a, b) {
+                var dateA = a.data.updated_at ? new Date(a.data.updated_at) : new Date(0);
+                var dateB = b.data.updated_at ? new Date(b.data.updated_at) : new Date(0);
+                return dateB - dateA; // Latest update pehle aayega
+            });
+
+            // 2. Populate Sorted Grid Cards
+            for (var i = 0; i < animeList.length; i++) {
+                var key = animeList[i].key;
+                var anime = animeList[i].data;
                 
                 var shortLang = "Hin";
                 if (anime.lang && anime.lang.toLowerCase().includes("english")) {
                     shortLang = "Hin+Eng";
+                }
+
+                var badgeHTML = '';
+                if (anime.latest_badge) {
+                    badgeHTML = '<span class="latest-ep-badge">' + anime.latest_badge + '</span>';
                 }
 
                 grid.innerHTML += 
@@ -249,6 +277,7 @@
                         '<div class="card-img-wrap">' +
                             '<span class="grid-lang-tag">' + shortLang + '</span>' +
                             '<img src="' + anime.banner + '" class="card-img" alt="' + anime.title + '">' +
+                            badgeHTML +
                         '</div>' +
                         '<div class="card-info">' +
                             '<div class="card-title">' + anime.title + '</div>' +
@@ -257,12 +286,13 @@
                     '</a>';
             }
 
-            // Auto Slider Logic (3 Second Timer)
+            // 3. Auto Slider Logic (3 Second Timer)
             var currentSlideIndex = 0;
             function updateSlider() {
-                if (keys.length === 0) return;
-                var currentKey = keys[currentSlideIndex];
-                var anime = allAnimeData[currentKey];
+                if (animeList.length === 0) return;
+                var currentItem = animeList[currentSlideIndex];
+                var currentKey = currentItem.key;
+                var anime = currentItem.data;
 
                 document.getElementById('slideImg').src = anime.banner;
                 document.getElementById('slideTitle').innerText = anime.title;
@@ -274,13 +304,14 @@
                 }
                 document.getElementById('slideLang').innerText = langText;
 
-                currentSlideIndex = (currentSlideIndex + 1) % keys.length;
+                currentSlideIndex = (currentSlideIndex + 1) % animeList.length;
             }
 
             updateSlider();
-            setInterval(updateSlider, 3000); // 3 सेकंड में ऑटो-स्लाइड
+            setInterval(updateSlider, 3000);
         }
     </script>
 
 </body>
 </html>
+
