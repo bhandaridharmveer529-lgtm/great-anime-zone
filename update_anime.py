@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+from datetime import datetime
 
 # Link/File ke liye Short Name Generator
 def shorten_title(title, ep_num, quality="720P"):
@@ -28,11 +29,10 @@ def run_auto_updater():
             except Exception:
                 data = {}
 
-    # Main Anime Name (Full Name hamesha intact rahega search ke liye)
+    # Main Anime Name
     full_anime_title = "The Elusive Samurai"
     ep_num = 1
     
-    # Sirf Link Label short hoga (Copyright Protection ke liye)
     short_link_name = shorten_title(full_anime_title, ep_num)
 
     # Video Player Embed Links
@@ -44,12 +44,14 @@ def run_auto_updater():
         print(f"⚠️ Server 1 broken! Replacing with fallback link...")
         server1_url = "https://morencius.com/embed/working_fallback_link"
 
-    # Anime Object Entry (Main Title Full Rahega)
+    # Anime Object Entry (Badge aur Timestamp ke sath)
     if full_anime_title not in data:
         data[full_anime_title] = {
-            "title": full_anime_title,  # Main Full Name
+            "title": full_anime_title,
             "banner": f"banners/{full_anime_title.lower().replace(' ', '_')}.jpg",
             "lang": "Hindi Dubbed",
+            "latest_badge": f"EP {ep_num} Added",
+            "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "seasons": {
                 "s1": {
                     "seasonName": "Season 1",
@@ -66,7 +68,7 @@ def run_auto_updater():
     for ep in ep_list:
         if ep["ep"] == f"Ep {ep_num}":
             ep["watch"] = [server1_url, server2_url]
-            ep["title"] = short_link_name # Sirf episode text short hai
+            ep["title"] = short_link_name
             ep_updated = True
             break
 
@@ -78,10 +80,15 @@ def run_auto_updater():
             "download": server1_url
         })
 
+    # Badge aur Time refresh karein jab bhi koi episode update ho
+    data[full_anime_title]["latest_badge"] = f"EP {ep_num} Added"
+    data[full_anime_title]["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(f"const allAnimeData = {json.dumps(data, indent=4, ensure_ascii=False)};")
     
-    print(f"✅ Full Name '{full_anime_title}' preserved. Episode link shortened to '{short_link_name}'.")
+    print(f"✅ Full Name '{full_anime_title}' preserved. Episode '{short_link_name}' added with badge 'EP {ep_num} Added'.")
 
 if __name__ == "__main__":
     run_auto_updater()
+    
