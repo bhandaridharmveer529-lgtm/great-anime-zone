@@ -195,12 +195,11 @@
         <button id="serverToggleBtn" class="server-btn" onclick="toggleServer()">
             🔄 Switch Server (<span id="serverText">Server 1</span>)
         </button>
-                <!-- Video Player -->
         <iframe 
             id="videoPlayer" 
             src="about:blank" 
             allow="autoplay; fullscreen; picture-in-picture; accelerometer; gyroscope" 
-            allowfullscreen>  
+            allowfullscreen>
         </iframe>
     </div>
 
@@ -353,20 +352,38 @@
         }
 
         function loadCurrentServer() {
-            var player = document.getElementById("videoPlayer");
-            var serverText = document.getElementById("serverText");
+            var container = document.querySelector(".video-container");
+            var currentUrl = "";
 
             if (Array.isArray(currentVideoUrl)) {
-                player.src = currentVideoUrl[currentServerIndex] || currentVideoUrl[0];
-                serverText.innerText = "Server " + (currentServerIndex + 1);
+                currentUrl = currentVideoUrl[currentServerIndex] || currentVideoUrl[0];
             } else {
                 if (currentServerIndex === 1 && typeof currentVideoUrl === 'string') {
-                    player.src = currentVideoUrl.replace("morencius.com", "doodstream.com");
-                    serverText.innerText = "Server 2";
+                    currentUrl = currentVideoUrl.replace("morencius.com", "doodstream.com");
                 } else {
-                    player.src = currentVideoUrl;
-                    serverText.innerText = "Server 1";
+                    currentUrl = currentVideoUrl;
                 }
+            }
+
+            var serverName = "Server " + (currentServerIndex + 1);
+
+            // Automatically switch between HTML5 video player for direct files and iframe for embeds
+            if (currentUrl && (currentUrl.includes(".mp4") || currentUrl.includes(".mkv") || currentUrl.includes(".webm"))) {
+                container.innerHTML = '<button id="serverToggleBtn" class="server-btn" onclick="toggleServer()">🔄 Switch Server (<span id="serverText">' + serverName + '</span>)</button>' +
+                    '<video id="videoPlayer" controls autoplay width="100%" height="100%" style="position:absolute; top:0; left:0; width:100%; height:100%; background:#000;">' +
+                    '<source src="' + currentUrl + '" type="video/mp4">' +
+                    'Your browser does not support the video tag.' +
+                    '</video>';
+            } else {
+                container.innerHTML = '<button id="serverToggleBtn" class="server-btn" onclick="toggleServer()">🔄 Switch Server (<span id="serverText">' + serverName + '</span>)</button>' +
+                    '<iframe id="videoPlayer" src="' + currentUrl + '" allow="autoplay; fullscreen; picture-in-picture; accelerometer; gyroscope" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"></iframe>';
+            }
+
+            var animeName = currentAnime ? currentAnime.title : "Anime";
+            var message = 'Hello Admin, "' + animeName + '" ka ' + currentEpNameGlobal + ' chal nahi raha hai. Kripya fix karein!';
+            var reportBtn = document.getElementById("reportBtn");
+            if (reportBtn) {
+                reportBtn.href = "https://t.me/" + telegramUsername + "?text=" + encodeURIComponent(message);
             }
         }
 
@@ -376,13 +393,6 @@
             currentServerIndex = 0; // Reset to Server 1 on new episode
 
             loadCurrentServer();
-
-            var animeName = currentAnime ? currentAnime.title : "Anime";
-            var message = 'Hello Admin, "' + animeName + '" ka ' + currentEpNameGlobal + ' chal nahi raha hai. Kripya fix karein!';
-            var reportBtn = document.getElementById("reportBtn");
-            if (reportBtn) {
-                reportBtn.href = "https://t.me/" + telegramUsername + "?text=" + encodeURIComponent(message);
-            }
         }
 
         loadAnimeDetails();
