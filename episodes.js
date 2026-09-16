@@ -4,7 +4,7 @@ const allAnimeData = {
         "banner": "banners/the_elusive_samurai.jpg",
         "lang": "Hindi Dubbed",
         "latest_badge": "EP 1 Added",
-        "updated_at": "2026-09-16 12:04:36",
+        "updated_at": "2026-09-16 18:04:22",
         "seasons": {
             "s1": {
                 "seasonName": "Season 1",
