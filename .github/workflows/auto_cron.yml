@@ -1,4 +1,4 @@
-name: Auto Scrape & Heal Anime Episodes
+name: Auto Update Anime
 
 on:
   schedule:
@@ -8,12 +8,16 @@ on:
 jobs:
   auto-update-job:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout Repository Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python Environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -27,7 +31,6 @@ jobs:
         run: |
           git config --global user.name "AnimeBot"
           git config --global user.email "bot@greatanimezone.com"
-          git add episodes.js
-          git commit -m "Auto-updated episodes.js with self-healing links" || exit 0
+          git add animeData.js
+          git commit -m "🤖 Auto-updated animeData.js with new anime" || exit 0
           git push
-          
