@@ -3,92 +3,220 @@ import os
 import requests
 from datetime import datetime
 
-# Link/File ke liye Short Name Generator
-def shorten_title(title, ep_num, quality="720P"):
-    words = title.split()
-    acronym = ".".join([w[0].upper() for w in words if w.isalnum()])
-    return f"{acronym}. Ep{ep_num}. {quality}"
+# ============================================
+# CONFIG
+# ============================================
+DATA_FILE = "animeData.js"
+ANILIST_URL = "https://graphql.anilist.co"
 
-# Self-Healing: Broken Link Detector
+# ============================================
+# 1. ANILIST SE ANIME LAO
+# ============================================
+def fetch_from_anilist(sort="TRENDING_DESC", status=None, per_page=10):
+    query = """
+    query ($sort: [MediaSort], $status: MediaStatus, $perPage: Int) {
+      Page (page: 1, perPage: $perPage) {
+        media (type: ANIME, sort: $sort, status: $status) {
+          id
+          title { romaji english native }
+          description
+          coverImage { large medium }
+          bannerImage
+          averageScore
+          episodes
+          genres
+          seasonYear
+          status
+        }
+      }
+    }"""
+    variables = {"sort": [sort], "status": status, "perPage": per_page}
+    
+    try:
+        res = requests.post(ANILIST_URL, json={"query": query, "variables": variables}, timeout=15)
+        data = res.json()
+        return data.get("data", {}).get("Page", {}).get("media", [])
+    except Exception as e:
+        print(f"❌ AniList error: {e}")
+        return []
+
+# ============================================
+# 2. SELF-HEALING: BROKEN LINK CHECK
+# ============================================
 def is_link_working(url):
+    if not url or url == "#":
+        return False
     try:
         res = requests.head(url, timeout=5, allow_redirects=True)
         return res.status_code == 200
     except Exception:
         return False
 
-def run_auto_updater():
-    file_path = "episodes.js"
-    data = {}
-
-    if os.path.exists(file_path):
-        with open(file_path, "r", encoding="utf-8") as f:
-            try:
-                raw_content = f.read().replace("const allAnimeData = ", "").rstrip(";")
-                data = json.loads(raw_content)
-            except Exception:
-                data = {}
-
-    # Main Anime Name
-    full_anime_title = "The Elusive Samurai"
-    ep_num = 1
+# ============================================
+# 3. ANILIST DATA KO HAMARE FORMAT ME BADLO
+# ============================================
+def convert_to_our_format(anime, base_id):
+    title = anime.get("title", {}).get("english") or \
+            anime.get("title", {}).get("romaji") or \
+            anime.get("title", {}).get("native") or "Unknown"
     
-    short_link_name = shorten_title(full_anime_title, ep_num)
-
-    # Video Player Embed Links
-    server1_url = "https://morencius.com/embed/0u2nsg1qq574"
-    server2_url = "https://streamtape.com/e/backup_sample"
-
-    # Auto Healing Check
-    if not is_link_working(server1_url):
-        print(f"⚠️ Server 1 broken! Replacing with fallback link...")
-        server1_url = "https://morencius.com/embed/working_fallback_link"
-
-    # Anime Object Entry (Badge aur Timestamp ke sath)
-    if full_anime_title not in data:
-        data[full_anime_title] = {
-            "title": full_anime_title,
-            "banner": f"banners/{full_anime_title.lower().replace(' ', '_')}.jpg",
-            "lang": "Hindi Dubbed",
-            "latest_badge": f"EP {ep_num} Added",
-            "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "seasons": {
-                "s1": {
-                    "seasonName": "Season 1",
-                    "seasonZip": "#",
-                    "episodes": []
-                }
+    year = str(anime.get("seasonYear") or "2024")
+    eps = str(anime.get("episodes") or "?")
+    rating = str(round((anime.get("averageScore") or 85) / 10, 1))
+    img = anime.get("coverImage", {}).get("large") or anime.get("coverImage", {}).get("medium") or ""
+    banner = anime.get("bannerImage") or img
+    desc = (anime.get("description") or "").replace("<br>", " ").replace("<i>", "").replace("</i>", "")
+    desc = desc.replace("<b>", "").replace("</b>", "").strip()
+    genres = anime.get("genres") or ["Action"]
+    is_new = anime.get("status") == "RELEASING"
+    
+    return {
+        "id": base_id,
+        "name": title,
+        "title": title,
+        "banner": banner,
+        "img": img,
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": rating,
+        "year": year,
+        "eps": eps,
+        "addedDate": datetime.now().strftime("%Y-%m-%d"),
+        "latestUpdate": "New Ep Added" if is_new else "Completed",
+        "isSeasonCompleted": not is_new,
+        "desc": desc,
+        "genres": genres,
+        "genre": genres[0] if genres else "Action",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {"ep": 1, "title": "Episode 1", "link": ""}
+                ]
             }
-        }
+        },
+        "isNew": is_new,
+        "isTrending": True
+    }
 
-    ep_list = data[full_anime_title]["seasons"]["s1"]["episodes"]
+# ============================================
+# 4. ANIMEDATA.JS READ KARO
+# ============================================
+def read_existing_data():
+    if not os.path.exists(DATA_FILE):
+        return []
     
-    # Episode Add / Update
-    ep_updated = False
-    for ep in ep_list:
-        if ep["ep"] == f"Ep {ep_num}":
-            ep["watch"] = [server1_url, server2_url]
-            ep["title"] = short_link_name
-            ep_updated = True
-            break
+    try:
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        # animeDatabase array nikaalo
+        start = content.find("const animeDatabase = [")
+        if start == -1:
+            return []
+        
+        start = content.find("[", start)
+        # bracket matching se end dhoondo
+        depth = 0
+        end = -1
+        for i in range(start, len(content)):
+            if content[i] == "[":
+                depth += 1
+            elif content[i] == "]":
+                depth -= 1
+                if depth == 0:
+                    end = i + 1
+                    break
+        
+        if end == -1:
+            return []
+        
+        array_str = content[start:end]
+        return json.loads(array_str)
+    except Exception as e:
+        print(f"⚠️ Read error: {e}")
+        return []
 
-    if not ep_updated:
-        ep_list.append({
-            "ep": f"Ep {ep_num}",
-            "title": short_link_name,
-            "watch": [server1_url, server2_url],
-            "download": server1_url
-        })
-
-    # Badge aur Time refresh karein jab bhi koi episode update ho
-    data[full_anime_title]["latest_badge"] = f"EP {ep_num} Added"
-    data[full_anime_title]["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(f"const allAnimeData = {json.dumps(data, indent=4, ensure_ascii=False)};")
+# ============================================
+# 5. ANIMEDATA.JS ME SAVE KARO
+# ============================================
+def save_data(existing, new_anime):
+    # Duplicate check
+    existing_names = {a.get("name", "").lower() for a in existing}
+    added = []
     
-    print(f"✅ Full Name '{full_anime_title}' preserved. Episode '{short_link_name}' added with badge 'EP {ep_num} Added'.")
+    for anime in new_anime:
+        if anime["name"].lower() not in existing_names:
+            existing.append(anime)
+            added.append(anime)
+            existing_names.add(anime["name"].lower())
+    
+    if not added:
+        print("ℹ️ Koi naya anime nahi mila")
+        return 0
+    
+    # File likho
+    output = f"const animeDatabase = {json.dumps(existing, indent=4, ensure_ascii=False)};\n"
+    
+    # heroSlides preserve karo agar hai
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
+            old = f.read()
+        hs_start = old.find("const heroSlides =")
+        if hs_start != -1:
+            output += "\n" + old[hs_start:]
+    
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        f.write(output)
+    
+    print(f"✅ {len(added)} naye anime add hue!")
+    return len(added)
+
+# ============================================
+# 6. MAIN FUNCTION
+# ============================================
+def run_auto_updater():
+    print("🚀 Anime Auto Updater shuru...\n")
+    
+    existing = read_existing_data()
+    print(f"📊 Existing anime: {len(existing)}")
+    
+    all_anime = []
+    
+    # 1. Trending
+    print("🔥 Trending fetch...")
+    all_anime.extend(fetch_from_anilist(sort="TRENDING_DESC", per_page=10))
+    
+    # 2. Famous
+    print("⭐ Famous fetch...")
+    all_anime.extend(fetch_from_anilist(sort="POPULARITY_DESC", per_page=10))
+    
+    # 3. Naye releasing
+    print("🆕 New releases fetch...")
+    all_anime.extend(fetch_from_anilist(sort="START_DATE_DESC", status="RELEASING", per_page=10))
+    
+    if not all_anime:
+        print("❌ Kuch nahi mila")
+        return
+    
+    # Duplicate hataao (AniList ID se)
+    unique = {}
+    for a in all_anime:
+        if a["id"] not in unique:
+            unique[a["id"]] = a
+    unique_anime = list(unique.values())
+    
+    print(f"📥 Total {len(unique_anime)} unique anime mile")
+    
+    # Format me badlo
+    base_id = int(datetime.now().timestamp()) % 100000
+    converted = [convert_to_our_format(a, base_id + i) for i, a in enumerate(unique_anime)]
+    
+    # Save karo
+    count = save_data(existing, converted)
+    
+    print(f"\n✅ Done! {count} naye anime add hue.")
 
 if __name__ == "__main__":
     run_auto_updater()
-    
