@@ -1,0 +1,31 @@
+name: Merge Episodes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Run Merge Script
+        run: python merge_episodes.py
+      
+      - name: Commit Changes
+        run: |
+          git config --global user.name "AnimeBot"
+          git config --global user.email "bot@greatanimezone.com"
+          git add animeData.js
+          git commit -m "🤖 Merged episodes from episodes.js" || exit 0
+          git push
