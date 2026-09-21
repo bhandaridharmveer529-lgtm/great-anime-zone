@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - 'anime_names.txt'
 
 jobs:
   auto-update-job:
@@ -34,4 +37,4 @@ jobs:
           git add animeData.js
           git add anime_names.txt
           git commit -m "🤖 Auto-updated animeData.js with new anime" || exit 0
-          git push
+          git push       
