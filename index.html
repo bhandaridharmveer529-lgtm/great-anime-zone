@@ -29,6 +29,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .search-item img { width: 48px; height: 64px; border-radius: 8px; object-fit: cover; }
 .search-item-title { font-size: 0.85rem; font-weight: 800; }
 .search-item-meta { font-size: 0.68rem; color: #94a3b8; }
+</style>
 <style>
 .hero { position: relative; min-height: 460px; display: flex; flex-direction: column; justify-content: flex-end; background-size: cover; background-position: center; padding: 0 18px 20px; }
 .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,9,14,0.1) 0%, rgba(7,9,14,0.5) 45%, rgba(7,9,14,0.95) 75%, #07090e 100%); }
@@ -49,10 +50,16 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .s-bar.active { background: #38bdf8; }
 
 .section { padding: 22px 0 8px; }
+.sec-label { font-size: 0.6rem; color: #64748b; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 0 18px; margin-bottom: 4px; }
 .sec-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 14px; padding: 0 18px; }
 .sec-title { font-size: 1.3rem; font-weight: 900; }
 .sec-title span { color: #38bdf8; }
-.see-all { color: #38bdf8; font-size: 0.72rem; font-weight: 800; background: none; border: none; cursor: pointer; }
+.reset-btn { color: #38bdf8; font-size: 0.72rem; font-weight: 800; background: none; border: none; cursor: pointer; }
+
+.chip-list { display: flex; gap: 8px; overflow-x: auto; padding: 0 18px 14px; scrollbar-width: none; }
+.chip-list::-webkit-scrollbar { display: none; }
+.chip { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 8px 16px; border-radius: 10px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; cursor: pointer; }
+.chip.active { background: rgba(56,189,248,0.12); border-color: #38bdf8; color: #38bdf8; }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 0 18px; }
 .card { background: rgba(15,23,42,0.4); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; cursor: pointer; }
@@ -70,12 +77,24 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .card-rating { color: #ffca28; font-weight: 800; }
 .btn-watch-card { background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.35); color: #38bdf8; text-align: center; padding: 9px; border-radius: 9px; font-size: 0.75rem; font-weight: 800; width: 100%; cursor: pointer; }
 
+.watchlist-cta { margin: 24px 18px 10px; background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(139,92,246,0.12)); border: 1px solid rgba(56,189,248,0.2); border-radius: 18px; padding: 22px 20px; }
+.cta-label { color: #38bdf8; font-size: 0.6rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.cta-title { font-size: 1.25rem; font-weight: 900; margin-bottom: 6px; }
+.cta-desc { font-size: 0.75rem; color: #94a3b8; line-height: 1.5; }
+
+/* PAGINATION — NAYA */
 .pagination { display: flex; justify-content: center; align-items: center; gap: 6px; padding: 20px 18px; flex-wrap: wrap; }
-.page-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; min-width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+.page-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; min-width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; cursor: pointer; }
 .page-btn.active { background: #38bdf8; color: #07090e; border-color: #38bdf8; }
+.page-btn:active { transform: scale(0.95); }
+
+.bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; background: rgba(7,9,14,0.95); backdrop-filter: blur(20px); border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-around; padding: 10px 0 14px; z-index: 100; }
+.nav-item { display: flex; flex-direction: column; align-items: center; gap: 3px; color: #64748b; font-size: 0.62rem; font-weight: 700; background: none; border: none; cursor: pointer; padding: 4px 12px; }
+.nav-item.active { color: #38bdf8; }
+.nav-item svg { width: 22px; height: 22px; }
 </style>
 </head>
-  <body>
+<body>
 <div class="app-shell">
 
     <header>
@@ -127,6 +146,8 @@ header { display: flex; justify-content: space-between; align-items: center; pad
                 <span id="hEps">0</span>
                 <span>•</span>
                 <span class="age-box" id="hAge">16+</span>
+                <span>•</span>
+                <span>Hindi dub</span>
             </div>
             <div class="hero-actions">
                 <button class="btn-watch-main" id="heroWatchBtn">▶ Watch now</button>
@@ -137,52 +158,54 @@ header { display: flex; justify-content: space-between; align-items: center; pad
     </div>
 
     <div class="section">
+        <div class="sec-label">CURATED FOR YOUR NEXT BINGE</div>
         <div class="sec-header">
-            <div class="sec-title">🔥 Latest <span>Updates</span></div>
-            <button class="see-all" onclick="filterCategory('All', 1)">See All →</button>
+            <div class="sec-title">Trending <span>anime</span></div>
+            <button class="reset-btn" onclick="filterGenre('All', null)">Reset filters →</button>
         </div>
-        <div class="grid-2" id="latestGrid"></div>
-    </div>
-
-    <div class="section">
-        <div class="sec-header">
-            <div class="sec-title">⚔️ Action <span>Picks</span></div>
-            <button class="see-all" onclick="filterCategory('Action', 1)">See All →</button>
+        <div class="chip-list">
+            <div class="chip active" onclick="filterGenre('All', this)">All</div>
+            <div class="chip" onclick="filterGenre('Action', this)">Action</div>
+            <div class="chip" onclick="filterGenre('Adventure', this)">Adventure</div>
+            <div class="chip" onclick="filterGenre('Fantasy', this)">Fantasy</div>
+            <div class="chip" onclick="filterGenre('Comedy', this)">Comedy</div>
         </div>
-        <div class="grid-2" id="actionGrid"></div>
-    </div>
-
-    <div class="section">
-        <div class="sec-header">
-            <div class="sec-title">🌍 Adventure <span>World</span></div>
-            <button class="see-all" onclick="filterCategory('Adventure', 1)">See All →</button>
-        </div>
-        <div class="grid-2" id="adventureGrid"></div>
-    </div>
-
-    <div class="section">
-        <div class="sec-header">
-            <div class="sec-title">✨ Fantasy <span>Realm</span></div>
-            <button class="see-all" onclick="filterCategory('Fantasy', 1)">See All →</button>
-        </div>
-        <div class="grid-2" id="fantasyGrid"></div>
-    </div>
-
-    <div class="section">
-        <div class="sec-header">
-            <div class="sec-title">📺 All <span>Anime</span></div>
-        </div>
-        <div class="grid-2" id="allGrid"></div>
+        <div class="grid-2" id="animeGrid"></div>
         <div class="pagination" id="pagination"></div>
     </div>
 
+    <div class="watchlist-cta">
+        <div class="cta-label">HINDI DUB, ZERO FRICTION</div>
+        <div class="cta-title">Your watchlist, sorted for tonight.</div>
+        <div class="cta-desc">Keep the shows that grabbed you close. One tap saves a title for whenever the city goes quiet.</div>
+    </div>
+
+</div>
+
+<div class="bottom-nav">
+    <button class="nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+    </button>
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Browse</span>
+    </button>
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>Watchlist</span>
+    </button>
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Profile</span>
+    </button>
 </div>
 
 <script src="animeData.js"></script>
 <script>
 const PER_PAGE = 25;
 let currentPage = 1;
-let currentCategory = 'All';
+let activeGenre = 'All';
 
 let currentHeroIndex = 0;
 let heroTimer = null;
@@ -239,6 +262,7 @@ function buildCard(a) {
     `;
 }
 
+// LATEST FIRST SORT — NAYA
 function sortLatestFirst(arr) {
     return [...arr].sort((a, b) => {
         const dateA = new Date(a.addedDate || '2020-01-01');
@@ -247,28 +271,23 @@ function sortLatestFirst(arr) {
     });
 }
 
-function renderRows() {
+function renderGrid() {
     if (typeof animeDatabase === 'undefined') return;
-    const sorted = sortLatestFirst(animeDatabase);
     
-    document.getElementById('latestGrid').innerHTML = sorted.slice(0, 6).map(buildCard).join('');
-    document.getElementById('actionGrid').innerHTML = sorted.filter(a => a.genres && a.genres.includes('Action')).slice(0, 4).map(buildCard).join('');
-    document.getElementById('adventureGrid').innerHTML = sorted.filter(a => a.genres && a.genres.includes('Adventure')).slice(0, 4).map(buildCard).join('');
-    document.getElementById('fantasyGrid').innerHTML = sorted.filter(a => a.genres && a.genres.includes('Fantasy')).slice(0, 4).map(buildCard).join('');
-    
-    renderAllAnime(currentPage);
-}
-
-function renderAllAnime(page) {
     const sorted = sortLatestFirst(animeDatabase);
-    const filtered = currentCategory === 'All' ? sorted : sorted.filter(a => a.genres && a.genres.includes(currentCategory));
+    const filtered = activeGenre === 'All' 
+        ? sorted 
+        : sorted.filter(a => a.genres && a.genres.includes(activeGenre));
     
     const totalPages = Math.ceil(filtered.length / PER_PAGE);
-    const start = (page - 1) * PER_PAGE;
+    const start = (currentPage - 1) * PER_PAGE;
     const pageItems = filtered.slice(start, start + PER_PAGE);
     
-    document.getElementById('allGrid').innerHTML = pageItems.map(buildCard).join('');
-    renderPagination(totalPages, page);
+    document.getElementById('animeGrid').innerHTML = pageItems.length > 0 
+        ? pageItems.map(buildCard).join('')
+        : '<div style="grid-column:span 2;text-align:center;color:#64748b;padding:30px;">No anime found</div>';
+    
+    renderPagination(totalPages, currentPage);
 }
 
 function renderPagination(totalPages, currentPage) {
@@ -293,15 +312,16 @@ function renderPagination(totalPages, currentPage) {
 
 function goToPage(page) {
     currentPage = page;
-    renderAllAnime(page);
-    document.getElementById('allGrid').scrollIntoView({ behavior: 'smooth' });
+    renderGrid();
+    document.getElementById('animeGrid').scrollIntoView({ behavior: 'smooth' });
 }
 
-function filterCategory(cat, page = 1) {
-    currentCategory = cat;
-    currentPage = page;
-    renderAllAnime(page);
-    document.getElementById('allGrid').scrollIntoView({ behavior: 'smooth' });
+function filterGenre(genre, el) {
+    activeGenre = genre;
+    currentPage = 1;
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    if (el) el.classList.add('active');
+    renderGrid();
 }
 
 function goWatch(id) { window.location.href = `watch.html?id=${id}`; }
@@ -345,7 +365,7 @@ function doSearch(query) {
 }
 
 initHero();
-renderRows();
+renderGrid();
 </script>
 </body>
 </html>
