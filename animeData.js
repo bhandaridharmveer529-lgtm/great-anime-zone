@@ -353,6 +353,44 @@ const animeDatabase = [
         },
         "isNew": true,
         "isTrending": true
+    },
+    {
+        "id": 70677,
+        "name": "Mushoku Tensei: Jobless Reincarnation",
+        "title": "Mushoku Tensei: Jobless Reincarnation",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108465-RgsRpTMhP9Sv.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108465-1ANspF1EWyFx.jpg",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "8.2",
+        "year": "2021",
+        "eps": "11",
+        "addedDate": "2026-09-21",
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
+        "desc": "When a 34-year-old underachiever gets run over by a bus, his story doesn’t end there. Reincarnated in a new world as an infant, Rudeus will seize every opportunity to live the life he’s always wanted. Armed with new friends, some freshly acquired magical abilities, and the courage to do the things he’s always dreamed of, he’s embarking on an epic adventure—with all of his past experience intact!\n  \n(Source: Funimation, edited)\n  \nNote: The anime pre-screened its 1st and 2nd episode starting on the 27th of December on the Nico Nico Live Broadcasting and D Anime Store services<i/>",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Ecchi",
+            "Fantasy"
+        ],
+        "genre": "Adventure",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
     }
 ];
 
