@@ -10,72 +10,34 @@
         
         .app-shell { width: 100%; max-width: 420px; background: #07090e; min-height: 100vh; display: flex; flex-direction: column; position: relative; border-left: 1px solid rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.05); }
 
-        /* Watch Header */
         .watch-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: #07090e; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 50; }
         .back-btn { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #38bdf8; padding: 6px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer; text-decoration: none; display: flex; align-items: center; gap: 4px; }
         
-        /* Sharingan Logo */
         .sharingan-box { width: 30px; height: 30px; background: #991b1b; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 12px rgba(239, 68, 68, 0.8); border: 1px solid rgba(248, 113, 113, 0.5); overflow: hidden; }
         .sharingan-svg { width: 22px; height: 22px; animation: spinEye 4s linear infinite; }
         @keyframes spinEye { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Server Bar */
-        .server-bar { display: none; align-items: center; gap: 10px; padding: 10px 14px; background: #0b0f19; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .s-label { font-size: 0.65rem; color: #94a3b8; font-weight: 800; letter-spacing: 1px; }
-
-        /* Video Player */
         .player-wrapper { position: relative; width: 100%; background: #000000; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .video-box { width: 100%; height: 235px; background: #000; display: flex; align-items: center; justify-content: center; position: relative; }
         .video-box video { width: 100%; height: 100%; object-fit: contain; background: #000; }
         .video-box iframe { width: 100%; height: 100%; border: none; }
         
-        /* Fullscreen Button */
-        .rotate-btn { 
-            position: absolute; 
-            bottom: 12px; 
-            right: 12px; 
-            background: rgba(11, 15, 25, 0.75); 
-            border: 1px solid rgba(255, 255, 255, 0.2); 
-            color: #ffffff; 
-            padding: 8px; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            backdrop-filter: blur(4px); 
-            z-index: 10; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); 
-        }
+        .rotate-btn { position: absolute; bottom: 12px; right: 12px; background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; padding: 8px; border-radius: 8px; cursor: pointer; backdrop-filter: blur(4px); z-index: 10; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); }
         .rotate-btn:active { background: #38bdf8; color: #07090e; }
 
-        /* Watch Details */
         .watch-details-box { padding: 16px 14px; }
         .w-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 6px; }
         .w-meta { display: flex; gap: 8px; align-items: center; font-size: 0.72rem; color: #94a3b8; margin-bottom: 12px; }
         .w-badge { background: #38bdf8; color: #07090e; font-size: 0.58rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; }
         .w-desc { font-size: 0.74rem; color: #a0aec0; line-height: 1.45; margin-bottom: 20px; background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
 
-        /* Season Header & Selector */
         .season-header-box { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
         .ep-section-title { font-size: 0.9rem; font-weight: 800; }
-        .season-selector {
-            background: #1e293b;
-            color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            outline: none;
-            cursor: pointer;
-        }
+        .season-selector { background: #1e293b; color: #ffffff; border: 1px solid rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; outline: none; cursor: pointer; }
 
-        /* Zip Download Container */
         .zip-box { margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px; }
         .btn-zip { background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); color: #34d399; padding: 10px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        /* Episode List */
         .ep-grid-page { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
         .ep-card-btn { background: #111827; border: 1px solid rgba(255,255,255,0.06); padding: 12px 14px; border-radius: 10px; cursor: pointer; transition: 0.3s; display: flex; justify-content: space-between; align-items: center; }
         .ep-card-btn.active { border-left: 4px solid #38bdf8; background: linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0%, rgba(17, 24, 39, 0.5) 100%); border-color: rgba(56, 189, 248, 0.2); }
@@ -136,7 +98,7 @@
     </div>
 
     <script src="animeData.js"></script>
-    <script>
+        <script>
         let currentAnime = null;
         let currentSeasonKey = null;
         let currentEpisodesList = [];
@@ -224,7 +186,6 @@
                         </div>
                         
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <!-- Professional Download Button -->
                             ${e.download ? `
                                 <a href="${e.download}" target="_blank" title="Download Episode" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #34d399; padding: 6px 10px; border-radius: 8px; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.2s;">
                                     📥
@@ -241,7 +202,6 @@
                     </div>
                 `).join('');
                 
-                // Pehla episode play karo by default
                 const firstCard = epGrid.querySelector('.ep-card-btn');
                 playEp(0, firstCard);
             } else {
@@ -249,25 +209,154 @@
             }
         }
 
-        function playEp(index, element) {
+        // ============================================
+        // MULTI-API FALLBACK FUNCTIONS
+        // ============================================
+
+        async function fetchFromHiAnime(animeName, epNum) {
+            try {
+                const searchRes = await fetch(`https://hianime-api-iy4s.onrender.com/api/search?keyword=${encodeURIComponent(animeName)}`);
+                const searchData = await searchRes.json();
+                if (!searchData.results || searchData.results.length === 0) return null;
+                
+                const animeId = searchData.results[0].id;
+                const epRes = await fetch(`https://hianime-api-iy4s.onrender.com/api/episodes/${animeId}`);
+                const epData = await epRes.json();
+                if (!epData.episodes || !epData.episodes[epNum - 1]) return null;
+                
+                const epId = epData.episodes[epNum - 1].id;
+                const streamRes = await fetch(`https://hianime-api-iy4s.onrender.com/api/stream?id=${epId}&type=dub&server=HD-2`);
+                const streamData = await streamRes.json();
+                
+                if (streamData.sources && streamData.sources.length > 0) {
+                    return streamData.sources[0].url;
+                }
+                return null;
+            } catch (e) {
+                console.log('HiAnime API fail:', e);
+                return null;
+            }
+        }
+
+        async function fetchFromConsumet(animeName, epNum) {
+            try {
+                const searchRes = await fetch(`https://api.consumet.org/anime/gogoanime/${encodeURIComponent(animeName)}`);
+                const searchData = await searchRes.json();
+                if (!searchData.results || searchData.results.length === 0) return null;
+                
+                const animeId = searchData.results[0].id;
+                const infoRes = await fetch(`https://api.consumet.org/anime/gogoanime/info/${animeId}`);
+                const infoData = await infoRes.json();
+                if (!infoData.episodes || !infoData.episodes[epNum - 1]) return null;
+                
+                const epId = infoData.episodes[epNum - 1].id;
+                const watchRes = await fetch(`https://api.consumet.org/anime/gogoanime/watch/${epId}`);
+                const watchData = await watchRes.json();
+                
+                if (watchData.sources && watchData.sources.length > 0) {
+                    return watchData.sources[0].url;
+                }
+                return null;
+            } catch (e) {
+                console.log('Consumet API fail:', e);
+                return null;
+            }
+        }
+
+        async function fetchFromAnify(animeName, epNum) {
+            try {
+                const searchRes = await fetch(`https://api.anify.tv/search?query=${encodeURIComponent(animeName)}`);
+                const searchData = await searchRes.json();
+                if (!searchData.results || searchData.results.length === 0) return null;
+                
+                const animeId = searchData.results[0].id;
+                const epRes = await fetch(`https://api.anify.tv/episodes/${animeId}`);
+                const epData = await epRes.json();
+                if (!epData.episodes || !epData.episodes[epNum - 1]) return null;
+                
+                const epId = epData.episodes[epNum - 1].id;
+                const streamRes = await fetch(`https://api.anify.tv/sources/${epId}`);
+                const streamData = await streamRes.json();
+                
+                if (streamData.sources && streamData.sources.length > 0) {
+                    return streamData.sources[0].url;
+                }
+                return null;
+            } catch (e) {
+                console.log('Anify API fail:', e);
+                return null;
+            }
+        }
+
+        function loadVideo(container, link) {
+            if (link.includes('streamtape.com/e/')) {
+                const match = link.match(/(https:\/\/streamtape\.com\/e\/[A-Za-z0-9]+)/);
+                if (match) link = match[1] + '/';
+            }
+            
+            if (link.endsWith('.mp4') || link.includes('.mkv')) {
+                container.innerHTML = `<video src="${link}" controls autoplay playsinline controlsList="nodownload"></video>`;
+            } else if (link.includes('.m3u8')) {
+                container.innerHTML = `<video id="hlsVideo" controls autoplay playsinline style="width:100%;height:100%;"></video>`;
+                if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+                    const video = document.getElementById('hlsVideo');
+                    const hls = new Hls();
+                    hls.loadSource(link);
+                    hls.attachMedia(video);
+                } else {
+                    container.innerHTML = `<video src="${link}" controls autoplay playsinline></video>`;
+                }
+            } else {
+                container.innerHTML = `<iframe src="${link}" allowfullscreen allow="autoplay"></iframe>`;
+            }
+        }
+
+        async function playEp(index, element) {
             const epData = currentEpisodesList[index];
             if (!epData) return;
 
             document.querySelectorAll('.ep-card-btn').forEach(btn => btn.classList.remove('active'));
             if (element) element.classList.add('active');
 
-            const link = epData.watch || epData.link || '';
             const container = document.getElementById('playerFrame');
+            let link = epData.watch || epData.link || '';
             
-            if (link.endsWith('.mp4') || link.includes('video.mp4') || link.startsWith('blob:') || link.includes('streamtape.com/e/')) {
-                if(link.includes('streamtape.com/e/')) {
-                    container.innerHTML = `<iframe src="${link}" allowfullscreen allow="autoplay"></iframe>`;
-                } else {
-                    container.innerHTML = `<video src="${link}" controls autoplay playsinline controlsList="nodownload"></video>`;
-                }
-            } else {
-                container.innerHTML = `<iframe src="${link}" allowfullscreen allow="autoplay"></iframe>`;
+            if (link && link !== '#' && link !== '') {
+                loadVideo(container, link);
+                return;
             }
+            
+            container.innerHTML = `
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#38bdf8;gap:10px;">
+                    <div style="font-size:1.5rem;">🔄</div>
+                    <div style="font-size:0.8rem;font-weight:700;">Video dhoondh rahe hain...</div>
+                    <div style="font-size:0.7rem;color:#94a3b8;" id="apiStatus">HiAnime API try kar rahe hain...</div>
+                </div>
+            `;
+            
+            const animeName = currentAnime.name || currentAnime.title;
+            const epNum = typeof epData.ep === 'number' ? epData.ep : index + 1;
+            const statusEl = document.getElementById('apiStatus');
+            
+            if (statusEl) statusEl.innerText = 'HiAnime API try kar rahe hain...';
+            link = await fetchFromHiAnime(animeName, epNum);
+            if (link) { loadVideo(container, link); return; }
+            
+            if (statusEl) statusEl.innerText = 'Consumet API try kar rahe hain...';
+            link = await fetchFromConsumet(animeName, epNum);
+            if (link) { loadVideo(container, link); return; }
+            
+            if (statusEl) statusEl.innerText = 'Anify API try kar rahe hain...';
+            link = await fetchFromAnify(animeName, epNum);
+            if (link) { loadVideo(container, link); return; }
+            
+            container.innerHTML = `
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#94a3b8;gap:10px;">
+                    <div style="font-size:2rem;">⚠️</div>
+                    <div style="font-size:0.85rem;font-weight:700;">Video Not Available</div>
+                    <div style="font-size:0.7rem;">Saare sources fail ho gaye</div>
+                </div>
+            `;
         }
 
         async function toggleFullScreen() {
@@ -298,5 +387,6 @@
             }
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.14/dist/hls.js"></script>
 </body>
 </html>
