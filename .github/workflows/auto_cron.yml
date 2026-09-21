@@ -32,5 +32,6 @@ jobs:
           git config --global user.name "AnimeBot"
           git config --global user.email "bot@greatanimezone.com"
           git add animeData.js
+          git add anime_names.txt
           git commit -m "🤖 Auto-updated animeData.js with new anime" || exit 0
           git push
