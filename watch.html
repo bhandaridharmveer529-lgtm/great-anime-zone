@@ -214,28 +214,18 @@
         // ============================================
 
         async function fetchFromHiAnime(animeName, epNum) {
-            try {
-                const searchRes = await fetch(`https://hianime-api-iy4s.onrender.com/api/search?keyword=${encodeURIComponent(animeName)}`);
-                const searchData = await searchRes.json();
-                if (!searchData.results || searchData.results.length === 0) return null;
-                
-                const animeId = searchData.results[0].id;
-                const epRes = await fetch(`https://hianime-api-iy4s.onrender.com/api/episodes/${animeId}`);
-                const epData = await epRes.json();
-                if (!epData.episodes || !epData.episodes[epNum - 1]) return null;
-                
-                const epId = epData.episodes[epNum - 1].id;
-                const streamRes = await fetch(`https://hianime-api-iy4s.onrender.com/api/stream?id=${epId}&type=dub&server=HD-2`);
-                const streamData = await streamRes.json();
-                
-                if (streamData.sources && streamData.sources.length > 0) {
-                    return streamData.sources[0].url;
-                }
-                return null;
-            } catch (e) {
-                console.log('HiAnime API fail:', e);
-                return null;
-            }
+    try {
+        const res = await fetch(`https://great-anime-zone.bhandaridharmveer529.workers.dev/?anime=${encodeURIComponent(animeName)}&ep=${epNum}&type=dub`);
+        const data = await res.json();
+        
+        if (data.sources && data.sources.length > 0) {
+            return data.sources[0].url;
+        }
+        return null;
+    } catch (e) {
+        console.log('Cloudflare Worker fail:', e);
+        return null;
+    }
         }
 
         async function fetchFromConsumet(animeName, epNum) {
