@@ -4,9 +4,7 @@ const urlsToCache = [
   '/index.html',
   '/watch.html',
   '/animeData.js',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
+  '/manifest.json'
 ];
 
 // Install — cache files
