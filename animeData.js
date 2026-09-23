@@ -384,7 +384,7 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link": "https://t.me/c/4416000098/3"
+                        "link": "https://t.me/c/4416000098/6"
                     }
                 ]
             }
