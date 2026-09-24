@@ -222,22 +222,60 @@ let activeGenre = 'All';
 let currentHeroIndex = 0;
 let heroTimer = null;
 
+let currentHeroSlides = [];
+
 function initHero() {
-    if (typeof heroSlides === 'undefined') return;
-    document.getElementById('sliderDots').innerHTML = heroSlides.map((_, i) => 
+    currentHeroSlides = heroAnimeNames.map(name => {
+        const anime = animeDatabase.find(a => 
+            a.name && a.name.toLowerCase() === name.toLowerCase()
+        );
+        
+        if (!anime) return null;
+        
+        return {
+            id: anime.id,
+            bg: anime.banner || anime.img,
+            tag: anime.isNew ? "NEW RELEASE" : "FEATURED",
+            title: anime.name,
+            desc: anime.desc || "Watch now on Great Anime Zone",
+            rating: anime.rating || "8.0",
+            eps: (anime.eps || "?") + " Episodes",
+            age: "16+"
+        };
+    }).filter(s => s !== null);
+    
+    if (currentHeroSlides.length === 0) {
+        document.getElementById('heroBanner').style.display = 'none';
+        return;
+    }
+    
+    document.getElementById('sliderDots').innerHTML = currentHeroSlides.map((_, i) => 
         `<div class="s-bar ${i === 0 ? 'active' : ''}" onclick="setHero(${i})"></div>`
     ).join('');
+    
+    currentHeroIndex = 0;
     updateHero();
+    startAutoPlay();
+}
+
+function setHero(i) { 
+    currentHeroIndex = i; 
+    updateHero(); 
+    startAutoPlay(); 
+}
+
+function startAutoPlay() {
+    if (heroTimer) clearInterval(heroTimer);
     heroTimer = setInterval(() => {
-        currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+        currentHeroIndex = (currentHeroIndex + 1) % currentHeroSlides.length;
         updateHero();
     }, 5000);
 }
 
-function setHero(i) { currentHeroIndex = i; updateHero(); }
-
 function updateHero() {
-    const d = heroSlides[currentHeroIndex];
+    if (currentHeroSlides.length === 0) return;
+    
+    const d = currentHeroSlides[currentHeroIndex];
     document.getElementById('heroBanner').style.backgroundImage = `url('${d.bg}')`;
     document.getElementById('hTag').innerText = d.tag;
     const words = d.title.split(' ');
@@ -251,7 +289,7 @@ function updateHero() {
     document.querySelectorAll('.s-bar').forEach((b, i) => 
         b.className = `s-bar ${i === currentHeroIndex ? 'active' : ''}`
     );
-}
+   }
 
 function buildCard(a) {
     return `
