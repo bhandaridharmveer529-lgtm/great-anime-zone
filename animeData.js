@@ -357,7 +357,7 @@ const heroSlides = [
     },
     {
         id: 2,
-        bg: "Solo Leveling.jpg",
+        bg: "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Solo%20Leveling.jpg",
         tag: "TRENDING ACTION",
         title: "Solo Leveling",
         desc: "A weak hunter gets a mysterious system that grants him incredible powers.",
@@ -367,7 +367,7 @@ const heroSlides = [
     },
     {
         id: 1,
-        bg: "Naruto.jpg",
+        bg: "Naruto.jpg"
         tag: "FAN FAVORITE",
         title: "Naruto",
         desc: "Naruto Uzumaki constantly searches for approval and recognition.",
