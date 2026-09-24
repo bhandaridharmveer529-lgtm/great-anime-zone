@@ -1499,12 +1499,10 @@ const heroSlides = [
 // ============================================
 // Naya anime slider me add karne ke liye — bas naam daalo
 const heroAnimeNames = [
-    "The Elusive Samurai",
-    "Solo Leveling",
     "Naruto",
-    "Mushoku Tensei",
-    "One Piece",
-    "Attack on Titan"
+    "Solo Leveling",
+    "Overlord",
+    "The Elusive Samurai"
 ];
 
 
