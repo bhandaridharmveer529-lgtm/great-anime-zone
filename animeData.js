@@ -1492,3 +1492,31 @@ const heroSlides = [
         age: "13+"
     }
 ];
+
+
+// ============================================
+// HERO SLIDER KE LIYE — SIRF ANIME KE NAAM
+// ============================================
+// Naya anime slider me add karne ke liye — bas naam daalo
+const heroAnimeNames = [
+    "The Elusive Samurai",
+    "Solo Leveling",
+    "Naruto",
+    "Mushoku Tensei",
+    "One Piece",
+    "Attack on Titan"
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
