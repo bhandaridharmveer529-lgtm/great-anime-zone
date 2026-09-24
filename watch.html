@@ -101,38 +101,43 @@
         <script>
         let currentAnime = null;
         let currentSeasonKey = null;
-        let currentEpisodesList = [];
+        let currentEpisodesList = [];     
+ const urlParams = new URLSearchParams(window.location.search);
+ const animeKey = urlParams.get('id') || urlParams.get('name');
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const animeKey = urlParams.get('name') || urlParams.get('id');
+let db = typeof animeDatabase !== 'undefined' ? animeDatabase : null;
 
-        let db = typeof animeDatabase !== 'undefined' ? animeDatabase : null;
-
-        if (db) {
-            if (Array.isArray(db)) {
-                currentAnime = db.find(a => (a.name && animeKey && a.name.toLowerCase() === animeKey.toLowerCase()) || a.id == animeKey) || db[0];
-            } else {
-                let keys = Object.keys(db);
-                let matchedKey = keys.find(k => animeKey && k.toLowerCase() === animeKey.toLowerCase()) || keys[0];
-                currentAnime = db[matchedKey];
-            }
-
+if (db && Array.isArray(db)) {
+    // Pehle ID se exact match karo
+    currentAnime = db.find(a => String(a.id) === String(animeKey));
+    
+    // Agar ID se nahi mila, toh name se try karo
+    if (!currentAnime && animeKey) {
+        currentAnime = db.find(a => a.name && a.name.toLowerCase() === animeKey.toLowerCase());
+    }
+} 
+            
             if (currentAnime) {
-                document.getElementById('wTitle').innerText = currentAnime.title || currentAnime.name || "Anime";
-                document.getElementById('wRating').innerText = currentAnime.rating || "8.5";
-                document.getElementById('wLang').innerText = currentAnime.lang || currentAnime.sub || "Hindi Dubbed";
-                document.getElementById('wDesc').innerText = currentAnime.desc || "";
+    document.getElementById('wTitle').innerText = currentAnime.title || currentAnime.name || "Anime";
+    document.getElementById('wRating').innerText = currentAnime.rating || "8.5";
+    document.getElementById('wLang').innerText = currentAnime.lang || currentAnime.sub || "Hindi Dubbed";
+    document.getElementById('wDesc').innerText = currentAnime.desc || "";
 
-                if (currentAnime.seasons && Object.keys(currentAnime.seasons).length > 0) {
-                    currentSeasonKey = Object.keys(currentAnime.seasons)[0];
-                    renderSeasonDropdown();
-                    renderEpisodes(currentSeasonKey);
-                }
-            }
-        } else {
-            document.getElementById('wTitle').innerText = "Database Error!";
-            document.getElementById('wDesc').innerText = "animeData.js could not be loaded.";
-        }
+    if (currentAnime.seasons && Object.keys(currentAnime.seasons).length > 0) {
+        currentSeasonKey = Object.keys(currentAnime.seasons)[0];
+        renderSeasonDropdown();
+        renderEpisodes(currentSeasonKey);
+    } else {
+        document.getElementById('wEpGrid').innerHTML = 
+            '<div style="color: #94a3b8; text-align: center; padding: 20px;">Episodes coming soon...</div>';
+    }
+} else {
+    document.getElementById('wTitle').innerText = "Anime not found";
+    document.getElementById('wDesc').innerText = "Please go back and select a valid anime.";
+    document.getElementById('wEpGrid').innerHTML = '';
+}
+
+            
 
         function renderSeasonDropdown() {
             const keys = Object.keys(currentAnime.seasons || {});
