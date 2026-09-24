@@ -111,28 +111,45 @@ def read_existing_data():
         print(f"⚠️ Read error: {e}")
         return []
 
+# YAHAN CHANGE KIYA GAYA HAI - Naya save_data function
 def save_data(existing, new_anime):
-    existing_names = {a.get("name", "").lower() for a in existing}
-    added = []
+    existing_map = {a.get("name", "").lower(): a for a in existing}
+    added_count = 0
+    updated_count = 0
+    
     for anime in new_anime:
-        if anime["name"].lower() not in existing_names:
+        name_key = anime["name"].lower()
+        if name_key not in existing_map:
+            # Naya anime add karo
             existing.append(anime)
-            added.append(anime)
-            existing_names.add(anime["name"].lower())
-    if not added:
-        print("ℹ️ Koi naya anime nahi mila")
+            existing_map[name_key] = anime
+            added_count += 1
+        else:
+            # Purane anime me sirf banner update karo (agar khali hai)
+            old_anime = existing_map[name_key]
+            if not old_anime.get("banner") and anime.get("banner"):
+                old_anime["banner"] = anime["banner"]
+                updated_count += 1
+    
+    if added_count == 0 and updated_count == 0:
+        print("ℹ️ Koi naya anime ya banner update nahi mila")
         return 0
+        
     output = f"const animeDatabase = {json.dumps(existing, indent=4, ensure_ascii=False)};\n"
+    
+    # Purana heroSlides wala data preserve karo
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r", encoding="utf-8") as f:
             old = f.read()
         hs_start = old.find("const heroSlides =")
         if hs_start != -1:
             output += "\n" + old[hs_start:]
+            
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         f.write(output)
-    print(f"✅ {len(added)} naye anime add hue!")
-    return len(added)
+        
+    print(f"✅ {added_count} naye anime add hue, {updated_count} purane update hue!")
+    return added_count + updated_count
 
 def run_auto_updater():
     print("🚀 Anime Auto Updater (Name-based)\n")
@@ -159,7 +176,7 @@ def run_auto_updater():
     base_id = int(datetime.now().timestamp()) % 100000
     converted = [convert_to_our_format(a, base_id + i) for i, a in enumerate(found_anime)]
     count = save_data(existing, converted)
-    print(f"\n✅ Done! {count} naye anime add hue.")
+    print(f"\n✅ Done! {count} anime update/add hue.")
 
 if __name__ == "__main__":
     run_auto_updater()
