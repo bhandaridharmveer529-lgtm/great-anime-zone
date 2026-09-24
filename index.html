@@ -34,7 +34,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 <style>
 .hero { 
     position: relative; 
-    min-height: 300px; 
+    min-height: 250px; 
     display: flex; 
     flex-direction: column; 
     justify-content: flex-end; 
@@ -48,9 +48,18 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .hero-content { position: relative; z-index: 2; }
 .hero-tag { color: #38bdf8; font-size: 0.65rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
 .hero-tag::before { content: ''; width: 18px; height: 2px; background: #38bdf8; }
-.hero-title { font-size: 2rem; font-weight: 900; line-height: 1.05; margin-bottom: 10px; }
+.hero-title { font-size: 1.5rem; font-weight: 900; line-height: 1.05; margin-bottom: 10px; }
 .hero-title span { color: #38bdf8; }
-.hero-desc { font-size: 0.78rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 14px; }
+  .hero-desc { 
+    font-size: 0.68rem; 
+    color: #cbd5e1; 
+    line-height: 1.4; 
+    margin-bottom: 10px; 
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }  
 .hero-meta { display: flex; gap: 10px; font-size: 0.72rem; color: #94a3b8; margin-bottom: 18px; flex-wrap: wrap; }
 .star-val { color: #ffca28; font-weight: 800; }
 .age-box { border: 1px solid rgba(255,255,255,0.25); padding: 2px 8px; border-radius: 5px; font-size: 0.65rem; }
