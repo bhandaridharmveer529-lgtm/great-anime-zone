@@ -367,7 +367,7 @@ const heroSlides = [
     },
     {
         id: 1,
-        bg: "Naruto.jpg"
+        bg: "Naruto.jpg",
         tag: "FAN FAVORITE",
         title: "Naruto",
         desc: "Naruto Uzumaki constantly searches for approval and recognition.",
