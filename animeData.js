@@ -356,15 +356,15 @@ const heroSlides = [
         age: "16+"
     },
     {
-        id: 2,
-        bg: "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Solo%20Leveling.jpg",
-        tag: "TRENDING ACTION",
-        title: "Solo Leveling",
-        desc: "A weak hunter gets a mysterious system that grants him incredible powers.",
-        rating: "9.1",
-        eps: "24 Episodes",
-        age: "16+"
-    },
+    id: 2,
+    bg: "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Solo%20Leveling%20Banner.jpg",
+    tag: "TRENDING ACTION",
+    title: "Solo Leveling",
+    desc: "A weak hunter gets a mysterious system that grants him incredible powers.",
+    rating: "9.1",
+    eps: "24 Episodes",
+    age: "16+"
+},
     {
         id: 1,
         bg: "Naruto.jpg",
