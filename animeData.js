@@ -341,6 +341,80 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true
+    },
+    {
+        "id": 42541,
+        "name": "Overlord",
+        "title": "Overlord",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20832-NswCiSYMoI2k.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20832-vUNm5zrYWifc.jpg",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "7.6",
+        "year": "2015",
+        "eps": "13",
+        "addedDate": "2026-09-25",
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
+        "desc": "The story takes place in the year 2138 when virtual reality gaming is booming. Yggdrasil, a popular online game is quietly shut down one day. However, the protagonist Momonga decides to not log out. Momonga is then transformed into the image of a skeleton as \"the most powerful wizard.\" The world continues to change, with non-player characters (NPCs) beginning to feel emotion. Having no parents, friends, or place in society, this ordinary young man Momonga then strives to take over the new world the game has become. \n \n(Source: Anime News Network)",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "genre": "Action",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
+    },
+    {
+        "id": 42542,
+        "name": "The Elusive Samurai",
+        "title": "The Elusive Samurai",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/162896-kcJr1VCSTrQ0.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx162896-hSMTVceb50GY.jpg",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "7.7",
+        "year": "2024",
+        "eps": "12",
+        "addedDate": "2026-09-25",
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
+        "desc": "In the year 1333, the Kamakura shogunate government comes crumbling down. A trusted vassal, Ashikaga Takauji, betrays the shogunate and organizes a rebellion. Houjou Tokiyuki, the rightful heir, escapes the massacre with a Shinto priest named Suwa Yorishige to Kamakura. On the run and fighting to stay alive, Tokiyuki sets in motion his plan to reclaim his birthright. \n \n(Source: Crunchyroll)",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Supernatural"
+        ],
+        "genre": "Action",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
     }
 ];
 
