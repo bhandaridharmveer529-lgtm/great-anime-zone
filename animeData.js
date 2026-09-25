@@ -3,7 +3,7 @@ const animeDatabase = [
         "id": 56691,
         "name": "Naruto",
         "title": "Naruto",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20-HHxhPj5JD13a.jpg",
+        "banner": "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Naruto%20Banner.jpg",
         "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20-dE6UHbFFg1A5.jpg",
         "sub": "Hindi Dubbed",
         "lang": "Hindi Dubbed",
