@@ -82,7 +82,7 @@ const animeDatabase = [
         "id": 56693,
         "name": "Solo Leveling",
         "title": "Solo Leveling",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg",
+        "banner": "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Solo%20Leveling%20Banner.jpg",
         "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx151807-it355ZgzquUd.png",
         "sub": "Hindi Dubbed",
         "lang": "Hindi Dubbed",
