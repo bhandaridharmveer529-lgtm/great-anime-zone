@@ -447,6 +447,12 @@ const animeDatabase = [
                         "ep": 1,
                         "title": "Episode 1",
                         "link": "https://fifth-plugin-copyright-tissue.trycloudflare.com/stream/11?hash=291bc0"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/21",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/21"
                     }
                 ]
             }
