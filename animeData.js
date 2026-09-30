@@ -446,7 +446,7 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link":  "http://13.203.214.14:8080/stream/11"
+                        "link": "https://fifth-plugin-copyright-tissue.trycloudflare.com/stream/11?hash=291bc0"
                     }
                 ]
             }
