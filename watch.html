@@ -306,53 +306,29 @@ if (db && Array.isArray(db)) {
             }
         }
 
-        async function playEp(index, element) {
-            const epData = currentEpisodesList[index];
-            if (!epData) return;
+       async function playEp(index, element) {
+    const epData = currentEpisodesList[index];
+    if (!epData) return;
 
-            document.querySelectorAll('.ep-card-btn').forEach(btn => btn.classList.remove('active'));
-            if (element) element.classList.add('active');
+    document.querySelectorAll('.ep-card-btn').forEach(btn => btn.classList.remove('active'));
+    if (element) element.classList.add('active');
 
-            const container = document.getElementById('playerFrame');
-            let link = epData.watch || epData.link || '';
-            
-            if (link && link !== '#' && link !== '') {
-                loadVideo(container, link);
-                return;
-            }
-            
-            container.innerHTML = `
-                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#38bdf8;gap:10px;">
-                    <div style="font-size:1.5rem;">🔄</div>
-                    <div style="font-size:0.8rem;font-weight:700;">Video dhoondh rahe hain...</div>
-                    <div style="font-size:0.7rem;color:#94a3b8;" id="apiStatus">HiAnime API try kar rahe hain...</div>
-                </div>
-            `;
-            
-            const animeName = currentAnime.name || currentAnime.title;
-            const epNum = typeof epData.ep === 'number' ? epData.ep : index + 1;
-            const statusEl = document.getElementById('apiStatus');
-            
-            if (statusEl) statusEl.innerText = 'HiAnime API try kar rahe hain...';
-            link = await fetchFromHiAnime(animeName, epNum);
-            if (link) { loadVideo(container, link); return; }
-            
-            if (statusEl) statusEl.innerText = 'Consumet API try kar rahe hain...';
-            link = await fetchFromConsumet(animeName, epNum);
-            if (link) { loadVideo(container, link); return; }
-            
-            if (statusEl) statusEl.innerText = 'Anify API try kar rahe hain...';
-            link = await fetchFromAnify(animeName, epNum);
-            if (link) { loadVideo(container, link); return; }
-            
-            container.innerHTML = `
-                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#94a3b8;gap:10px;">
-                    <div style="font-size:2rem;">⚠️</div>
-                    <div style="font-size:0.85rem;font-weight:700;">Video Not Available</div>
-                    <div style="font-size:0.7rem;">Saare sources fail ho gaye</div>
-                </div>
-            `;
-        }
+    const container = document.getElementById('playerFrame');
+    let link = epData.watch || epData.link || '';
+    
+    if (link && link !== '#' && link !== '') {
+        loadVideo(container, link);
+        return;
+    }
+    
+    container.innerHTML = `
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#94a3b8;gap:10px;">
+            <div style="font-size:2rem;">📭</div>
+            <div style="font-size:0.85rem;font-weight:700;">Video Not Available</div>
+            <div style="font-size:0.7rem;color:#64748b;">Is episode ka link abhi add nahi hua</div>
+        </div>
+    `;
+       } 
 
         async function toggleFullScreen() {
             const container = document.getElementById('playerFrame');
