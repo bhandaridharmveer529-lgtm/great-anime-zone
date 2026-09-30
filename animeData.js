@@ -446,7 +446,7 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link": "link": "http://13.203.214.14:8080/stream/11"
+                        "link":  "http://13.203.214.14:8080/stream/11"
                     }
                 ]
             }
