@@ -451,8 +451,8 @@ const animeDatabase = [
                     {
                         "ep": 2,
                         "title": "Episode 2",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/21?hash=291bc0",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/21?hash=291bc0"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/16?hash=2c451f",
+                        "download": "https://michelle-recognition-holder -stop.trycloudflare.com/stream/16 ?hash=2c451f&d=true"
                     }
                 ]
             }
