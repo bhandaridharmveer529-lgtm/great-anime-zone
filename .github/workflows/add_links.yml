@@ -1,0 +1,38 @@
+name: Add Links to animeData
+
+on:
+  push:
+    paths:
+      - 'links.txt'
+  workflow_dispatch:
+
+jobs:
+  add-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install requests
+        run: pip install requests
+      
+      - name: Run add_links script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python add_links.py
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add animeData.js
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto: links.txt se episodes add kiye"
+          git push
