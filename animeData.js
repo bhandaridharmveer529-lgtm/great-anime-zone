@@ -534,6 +534,45 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true
+    },
+    {
+        "id": 29152,
+        "romaji_name": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+        "name": "Mushoku Tensei: Jobless Reincarnation Season 3",
+        "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178789-9nHWmoRLlcLu.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx178789-hNXjKFzUq7mk.jpg",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "8.6",
+        "year": "2026",
+        "eps": "14",
+        "addedDate": "2026-10-02",
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
+        "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Ecchi",
+            "Fantasy"
+        ],
+        "genre": "Adventure",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
     }
 ];
 
