@@ -58,6 +58,7 @@ def convert_to_our_format(anime, base_id):
     
     return {
         "id": base_id,
+        "romaji_name": anime.get("title", {}).get("romaji", ""),
         "name": title,
         "title": title,
         "banner": banner,
