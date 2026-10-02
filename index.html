@@ -416,7 +416,11 @@ function doSearch(query) {
         const q = query.trim().toLowerCase();
         if (!q) { results.innerHTML = ''; return; }
         
-        const found = animeDatabase.filter(a => a.name.toLowerCase().includes(q));
+        const found = animeDatabase.filter(a => 
+            a.name.toLowerCase().includes(q) || 
+            (a.romaji_name && a.romaji_name.toLowerCase().includes(q))
+        );
+        
         if (found.length === 0) {
             results.innerHTML = `<div style="text-align:center;color:#64748b;padding:20px;">❌ No anime found</div>`;
             return;
