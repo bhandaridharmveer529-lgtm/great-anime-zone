@@ -129,27 +129,36 @@ def main():
                 added += 1
             
             existing_eps.sort(key=lambda x: x["ep"])
-            # Total episodes from AniList data
-total_eps = int(found_anime.get("eps", 0) or 0)
-current_count = len(existing_eps)
-
-if total_eps > 0 and current_count >= total_eps:
-    found_anime["latestUpdate"] = "Completed"
-    found_anime["isSeasonCompleted"] = True
-    found_anime["isNewEp"] = False
-else:
-    latest_ep = max(existing_eps, key=lambda x: x["ep"])["ep"]
-    found_anime["latestUpdate"] = f"EP {latest_ep} Added"
-    found_anime["isSeasonCompleted"] = False
-    found_anime["isNewEp"] = True       
-    
-    if added == 0:
-        print("Koi change nahi hua")
-        return
+        
+        # Badge logic - per anime (sahi jagah pe)
+        total_eps = int(found_anime.get("eps", 0) or 0)
+        all_eps_count = 0
+        max_ep = 0
+        if "seasons" in found_anime:
+            for season in found_anime["seasons"].values():
+                for ep in season.get("episodes", []):
+                    if ep.get("link") and ep.get("link") != "":
+                        all_eps_count += 1
+                        if ep.get("ep", 0) > max_ep:
+                            max_ep = ep.get("ep", 0)
+        
+        if all_eps_count == 0:
+            found_anime["latestUpdate"] = "New Ep Added"
+            found_anime["isSeasonCompleted"] = False
+            found_anime["isNewEp"] = False
+        elif total_eps > 0 and all_eps_count >= total_eps:
+            found_anime["latestUpdate"] = "Completed"
+            found_anime["isSeasonCompleted"] = True
+            found_anime["isNewEp"] = False
+        else:
+            found_anime["latestUpdate"] = f"EP {max_ep} Added"
+            found_anime["isSeasonCompleted"] = False
+            found_anime["isNewEp"] = True
+        print(f"Badge: {anime_name} -> {found_anime['latestUpdate']}")
     
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
-    s = update_github(new_content, sha, f"Manual links: {added} episodes")
+    s = update_github(new_content, sha, f"Links update: {added} eps + badge fix")
     print(f"GitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
 
 if __name__ == "__main__":
