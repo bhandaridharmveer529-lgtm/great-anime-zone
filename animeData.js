@@ -11,8 +11,8 @@ const animeDatabase = [
         "year": "2002",
         "eps": "220",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "Naruto Uzumaki, a hyperactive and knuckle-headed ninja, lives in Konohagakure, the Hidden Leaf village. Moments prior to his birth, a huge demon known as the Kyuubi, the Nine-tailed Fox, attacked Konohagakure and wreaked havoc. In order to put an end to the Kyuubi's rampage, the leader of the village, the 4th Hokage, sacrificed his life and sealed the monstrous beast inside the newborn Naruto.   \nShunned because of the presence of the Kyuubi inside him, Naruto struggles to find his place in the village. He strives to become the Hokage of Konohagakure, and he meets many friends and foes along the way.   \n(Source: MAL Rewrite)",
         "genres": [
             "Action",
@@ -37,7 +37,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 56692,
@@ -77,7 +78,8 @@ const animeDatabase = [
         },
         "isNew": true,
         "isTrending": true,
-        "romaji_name": "ONE PIECE"
+        "romaji_name": "ONE PIECE",
+        "isNewEp": false
     },
     {
         "id": 56693,
@@ -91,8 +93,8 @@ const animeDatabase = [
         "year": "2024",
         "eps": "12",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Seong Jin-U. After being brutally slaughtered by monsters in a high-ranking dungeon, Jin-U came back with the System, a program only he could see, that’s leveling him up in every way. Now, he’s inspired to discover the secrets behind his powers and the dungeon that spawned them. \n \n(Source: Crunchyroll)",
         "genres": [
             "Action",
@@ -114,7 +116,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 56694,
@@ -128,8 +131,8 @@ const animeDatabase = [
         "year": "2013",
         "eps": "25",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "Several hundred years ago, humans were nearly exterminated by titans. Titans are typically several stories tall, seem to have no intelligence, devour human beings and, worst of all, seem to do it for the pleasure rather than as a food source. A small percentage of humanity survived by walling themselves in a city protected by extremely high walls, even taller than the biggest of titans.  \r\nFlash forward to the present and the city has not seen a titan in over 100 years. Teenage boy Eren and his foster sister Mikasa witness something horrific as the city walls are destroyed by a colossal titan that appears out of thin air. As the smaller titans flood the city, the two kids watch in horror as their mother is eaten alive. Eren vows that he will murder every single titan and take revenge for all of mankind.  \r\n(Source: MangaHelpers)",
         "genres": [
             "Action",
@@ -153,7 +156,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Shingeki no Kyojin"
+        "romaji_name": "Shingeki no Kyojin",
+        "isNewEp": false
     },
     {
         "id": 56695,
@@ -167,8 +171,8 @@ const animeDatabase = [
         "year": "2016",
         "eps": "13",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "The MMORPG Onigiri thrusts its players into mystical Japan, a land filled with mythical creatures of Japanese legend. Starting as a lone Oni, players fight against the malevolent influence of the Kamikui as their miasma spreads over the land. 8 NPCS, each with their own distinct personality and skills, ally themselves with the player to help build a legend, and quell the evil that has arisen. As you grow stronger together, so do the bonds binding you to each other.\n  \n(Source: Anime News Network)",
         "genres": [
             "Adventure",
@@ -191,7 +195,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Onigiri"
+        "romaji_name": "Onigiri",
+        "isNewEp": false
     },
     {
         "id": 56696,
@@ -205,8 +210,8 @@ const animeDatabase = [
         "year": "2020",
         "eps": "24",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "A boy fights... for \"the right death.\" \n \nHardship, regret, shame: the negative feelings that humans feel become Curses that lurk in our everyday lives. The Curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. What's more, the Curses can only be exorcised by another Curse. \n \nItadori Yuji is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a friend who has been attacked by Curses, he eats the finger of the Double-Faced Specter, taking the Curse into his own soul. From then on, he shares one body with the Double-Faced Specter. Guided by the most powerful of sorcerers, Gojou Satoru, Itadori is admitted to the Tokyo Metropolitan Technical High School of Sorcery, an organization that fights the Curses... and thus begins the heroic tale of a boy who became a Curse to exorcise a Curse, a life from which he could never turn back.\n  \n(Source: Crunchyroll) \n \nNote: The first episode received an early web premiere on September 19th, 2020. The regular TV broadcast started on October 3rd, 2020.",
         "genres": [
             "Action",
@@ -228,7 +233,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 56697,
@@ -242,8 +248,8 @@ const animeDatabase = [
         "year": "1989",
         "eps": "291",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "Goku is back with his new son, Gohan, but just when things are getting settled down, the adventures continue. Whether he is facing enemies such as Freeza, Cell, or Boo, Goku is proven to be an elite of his own and discovers his race, Saiyan. He meets many new people, gaining allies as well as enemies, as he still finds time to raise a family and be the happy-go-lucky Saiyan he is.  \n(Source: Anime News Network)",
         "genres": [
             "Action",
@@ -268,7 +274,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Dragon Ball Z"
+        "romaji_name": "Dragon Ball Z",
+        "isNewEp": false
     },
     {
         "id": 56698,
@@ -282,8 +289,8 @@ const animeDatabase = [
         "year": "2006",
         "eps": "37",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "Light Yagami is a genius high school student who is about to learn about life through a book of death. When a bored shinigami, a God of Death, named Ryuk drops a black notepad called a Death Note, Light receives power over life and death with the stroke of a pen. Determined to use this dark gift for the best, Light sets out to rid the world of evil… namely, the people he believes to be evil. Should anyone hold such power? \n \nThe consequences of Light’s actions will set the world ablaze. \n \n(Source: VIZ Media)",
         "genres": [
             "Mystery",
@@ -307,7 +314,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "DEATH NOTE"
+        "romaji_name": "DEATH NOTE",
+        "isNewEp": false
     },
     {
         "id": 56699,
@@ -321,8 +329,8 @@ const animeDatabase = [
         "year": "2015",
         "eps": "12",
         "addedDate": "2026-09-24",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "The \"school sword action\" story revolves around Magic Knights, modern magic-users who fight with weapons converted from their souls. Ikki Kurogane goes to a school for these Magic Knights, but he is the \"Failed Knight\" or \"Worst One\" who is failing because he has no magical skills. However, one day, he is challenged to a duel by Stella, a foreign princess and the \"Number One\" student. In this duel, \"the loser must be obedient for life.\" \n \n(Source: Anime News Network)",
         "genres": [
             "Action",
@@ -346,7 +354,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Rakudai Kishi no Cavalry"
+        "romaji_name": "Rakudai Kishi no Cavalry",
+        "isNewEp": false
     },
     {
         "id": 42541,
@@ -360,8 +369,8 @@ const animeDatabase = [
         "year": "2015",
         "eps": "13",
         "addedDate": "2026-09-25",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "The story takes place in the year 2138 when virtual reality gaming is booming. Yggdrasil, a popular online game is quietly shut down one day. However, the protagonist Momonga decides to not log out. Momonga is then transformed into the image of a skeleton as \"the most powerful wizard.\" The world continues to change, with non-player characters (NPCs) beginning to feel emotion. Having no parents, friends, or place in society, this ordinary young man Momonga then strives to take over the new world the game has become. \n \n(Source: Anime News Network)",
         "genres": [
             "Action",
@@ -384,7 +393,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Overlord"
+        "romaji_name": "Overlord",
+        "isNewEp": false
     },
     {
         "id": 42542,
@@ -398,8 +408,8 @@ const animeDatabase = [
         "year": "2024",
         "eps": "12",
         "addedDate": "2026-09-25",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "In the year 1333, the Kamakura shogunate government comes crumbling down. A trusted vassal, Ashikaga Takauji, betrays the shogunate and organizes a rebellion. Houjou Tokiyuki, the rightful heir, escapes the massacre with a Shinto priest named Suwa Yorishige to Kamakura. On the run and fighting to stay alive, Tokiyuki sets in motion his plan to reclaim his birthright. \n \n(Source: Crunchyroll)",
         "genres": [
             "Action",
@@ -422,7 +432,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Nige Jouzu no Wakagimi"
+        "romaji_name": "Nige Jouzu no Wakagimi",
+        "isNewEp": false
     },
     {
         "id": 67509,
@@ -519,8 +530,8 @@ const animeDatabase = [
         "year": "2023",
         "eps": "13",
         "addedDate": "2026-10-02",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
         "genres": [
             "Adventure",
@@ -544,7 +555,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Mushoku Tensei II: Isekai Ittara Honki Dasu"
+        "romaji_name": "Mushoku Tensei II: Isekai Ittara Honki Dasu",
+        "isNewEp": false
     },
     {
         "id": 29152,
@@ -559,8 +571,8 @@ const animeDatabase = [
         "year": "2026",
         "eps": "14",
         "addedDate": "2026-10-02",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
         "genres": [
             "Adventure",
@@ -583,7 +595,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 99291,
@@ -622,7 +635,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 99293,
@@ -661,7 +675,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     }
 ];
 
