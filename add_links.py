@@ -129,6 +129,19 @@ def main():
                 added += 1
             
             existing_eps.sort(key=lambda x: x["ep"])
+            # Total episodes from AniList data
+total_eps = int(found_anime.get("eps", 0) or 0)
+current_count = len(existing_eps)
+
+if total_eps > 0 and current_count >= total_eps:
+    found_anime["latestUpdate"] = "Completed"
+    found_anime["isSeasonCompleted"] = True
+    found_anime["isNewEp"] = False
+else:
+    latest_ep = max(existing_eps, key=lambda x: x["ep"])["ep"]
+    found_anime["latestUpdate"] = f"EP {latest_ep} Added"
+    found_anime["isSeasonCompleted"] = False
+    found_anime["isNewEp"] = True       
     
     if added == 0:
         print("Koi change nahi hua")
