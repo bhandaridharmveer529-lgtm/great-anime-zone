@@ -25,24 +25,24 @@ def main():
     for anime in anime_db:
         total_eps = int(anime.get("eps", 0) or 0)
         
-        # Saare episodes ikattha karo
-        all_eps = []
+        current_count = 0
+        max_ep = 0
         if "seasons" in anime:
             for season in anime["seasons"].values():
                 for ep in season.get("episodes", []):
-                    all_eps.append(ep.get("ep", 0))
+                    if ep.get("link"):  # Sirf wahi episodes count karo jinka link hai
+                        current_count += 1
+                        if ep.get("ep", 0) > max_ep:
+                            max_ep = ep.get("ep", 0)
         
-        current_count = len(all_eps)
-        
-        if total_eps > 0 and current_count >= total_eps:
+        if current_count == 0:
+            anime["latestUpdate"] = "New Ep Added"
+            anime["isSeasonCompleted"] = False
+        elif total_eps > 0 and current_count >= total_eps:
             anime["latestUpdate"] = "Completed"
             anime["isSeasonCompleted"] = True
-        elif current_count > 0:
-            max_ep = max(all_eps)
-            anime["latestUpdate"] = f"EP {max_ep} Added"
-            anime["isSeasonCompleted"] = False
         else:
-            anime["latestUpdate"] = "New Ep Added"
+            anime["latestUpdate"] = f"EP {max_ep} Added"
             anime["isSeasonCompleted"] = False
         
         print(f"{anime['name']}: {anime['latestUpdate']} (Total: {total_eps}, Added: {current_count})")
