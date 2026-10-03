@@ -117,7 +117,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "isNewEp": false
+        "isNewEp": false,
+        "romaji_name": "Ore dake Level Up na Ken"
     },
     {
         "id": 56694,
@@ -234,7 +235,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "isNewEp": false
+        "isNewEp": false,
+        "romaji_name": "Jujutsu Kaisen"
     },
     {
         "id": 56697,
