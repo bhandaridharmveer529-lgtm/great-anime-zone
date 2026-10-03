@@ -76,7 +76,8 @@ const animeDatabase = [
             }
         },
         "isNew": true,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "ONE PIECE"
     },
     {
         "id": 56693,
@@ -151,7 +152,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Shingeki no Kyojin"
     },
     {
         "id": 56695,
@@ -188,7 +190,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Onigiri"
     },
     {
         "id": 56696,
@@ -264,7 +267,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Dragon Ball Z"
     },
     {
         "id": 56698,
@@ -302,7 +306,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "DEATH NOTE"
     },
     {
         "id": 56699,
@@ -340,7 +345,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Rakudai Kishi no Cavalry"
     },
     {
         "id": 42541,
@@ -377,7 +383,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Overlord"
     },
     {
         "id": 42542,
@@ -414,7 +421,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Nige Jouzu no Wakagimi"
     },
     {
         "id": 67509,
@@ -495,7 +503,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Mushoku Tensei: Isekai Ittara Honki Dasu"
     },
     {
         "id": 27531,
@@ -533,7 +542,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "romaji_name": "Mushoku Tensei II: Isekai Ittara Honki Dasu"
     },
     {
         "id": 29152,
