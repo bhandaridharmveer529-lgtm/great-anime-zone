@@ -573,6 +573,84 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true
+    },
+    {
+        "id": 99291,
+        "romaji_name": "Mushoku Tensei: Isekai Ittara Honki Dasu Part 2",
+        "name": "Mushoku Tensei: Jobless Reincarnation Cour 2",
+        "title": "Mushoku Tensei: Jobless Reincarnation Cour 2",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/127720-oBpHiMWQhFVN.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127720-ADJgIrUVMdU9.jpg",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "8.5",
+        "year": "2021",
+        "eps": "12",
+        "addedDate": "2026-10-03",
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
+        "desc": "After the mysterious mana calamity, Rudeus Greyrat and his fierce student Eris Boreas Greyrat are teleported to the Demon Continent. There, they team up with their newfound companion Ruijerd Supardia—the former leader of the Superd's Warrior group—to form \"Dead End,\" a successful adventurer party. Making a name for themselves, the trio journeys across the continent to make their way back home to Fittoa.\n  \nFollowing the advice he received from the faceless god Hitogami, Rudeus saves Kishirika Kishirisu, the Great Emperor of the Demon World, who rewards him by granting him a strange power. Now, as Rudeus masters the powerful ability that offers a number of new opportunities, it might prove to be more than what he bargained for when unexpected dangers threaten to hinder their travels.\n  \n(Source: MAL Rewrite)",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Ecchi",
+            "Fantasy"
+        ],
+        "genre": "Adventure",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
+    },
+    {
+        "id": 99293,
+        "romaji_name": "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2",
+        "name": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+        "title": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166873-GTi5imE5skM2.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx166873-xO0BRPkmwFll.png",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "8.3",
+        "year": "2024",
+        "eps": "12",
+        "addedDate": "2026-10-03",
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
+        "desc": "Following the faceless god Hitogami's advice seems to have worked wonders for Rudeus Greyrat. After enrolling into the University of Magic as he was told, Rudeus reunites with his childhood friend Sylphiette, who put a valiant effort into curing his condition. The two grow ever closer together and decide to host a wedding party, inviting the friends they have made over the years to announce and formalize their relationship.\n  \nFor all his recent blessings, however, Rudeus' troubles are far from over. The research he is helping Shizuka Nanahoshi conduct hits a bottleneck, sending her into a deep slump much like he experienced in his previous life. Furthermore, a letter from his father, Paul, brings complications to Rudeus' relationships, and Sylphiette still knows next to nothing about his real background. In the face of these issues, Rudeus will have to apply the lessons he has learned in this new world to navigate through the challenges that come with living a life to its fullest.\n  \n(Source: MAL Rewrite)",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Ecchi",
+            "Fantasy"
+        ],
+        "genre": "Adventure",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
     }
 ];
 
