@@ -436,8 +436,8 @@ const animeDatabase = [
         "year": "2021",
         "eps": "11",
         "addedDate": "2026-09-30",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "EP 8 Added",
+        "isSeasonCompleted": false,
         "desc": "When a 34-year-old underachiever gets run over by a bus, his story doesn’t end there. Reincarnated in a new world as an infant, Rudeus will seize every opportunity to live the life he’s always wanted. Armed with new friends, some freshly acquired magical abilities, and the courage to do the things he’s always dreamed of, he’s embarking on an epic adventure—with all of his past experience intact!\n  \n(Source: Funimation, edited)\n  \nNote: The anime pre-screened its 1st and 2nd episode starting on the 27th of December on the Nico Nico Live Broadcasting and D Anime Store services<i/>",
         "genres": [
             "Adventure",
@@ -504,7 +504,8 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "romaji_name": "Mushoku Tensei: Isekai Ittara Honki Dasu"
+        "romaji_name": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+        "isNewEp": true
     },
     {
         "id": 27531,
