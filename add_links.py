@@ -3,11 +3,53 @@ import re
 import json
 import base64
 import requests
+from difflib import SequenceMatcher
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 GITHUB_REPO = "bhandaridharmveer529-lgtm/great-anime-zone"
 GITHUB_FILE = "animeData.js"
 LINKS_FILE = "links.txt"
+
+def similarity(a, b):
+    return SequenceMatcher(None, a.lower().strip(), b.lower().strip()).ratio()
+
+def find_best_match(name, anime_db):
+    best, best_score = None, 0
+    for anime in anime_db:
+        db_name = anime.get("name", "")
+        score = similarity(name, db_name)
+        if name.lower() in db_name.lower() or db_name.lower() in name.lower():
+            score = max(score, 0.8)
+        if score > best_score:
+            best_score = score
+            best = anime
+    return best if best_score >= 0.55 else None
+
+def recalc_badge(anime):
+    """Anime ka badge recalculate karo"""
+    total_eps = int(anime.get("eps", 0) or 0)
+    current_count = 0
+    max_ep = 0
+    if "seasons" in anime:
+        for season in anime["seasons"].values():
+            for ep in season.get("episodes", []):
+                if ep.get("link") and ep.get("link") != "":
+                    current_count += 1
+                    if ep.get("ep", 0) > max_ep:
+                        max_ep = ep.get("ep", 0)
+    
+    if current_count == 0:
+        anime["latestUpdate"] = "New Ep Added"
+        anime["isSeasonCompleted"] = False
+        anime["isNewEp"] = False
+    elif total_eps > 0 and current_count >= total_eps:
+        anime["latestUpdate"] = "Completed"
+        anime["isSeasonCompleted"] = True
+        anime["isNewEp"] = False
+    else:
+        anime["latestUpdate"] = f"EP {max_ep} Added"
+        anime["isSeasonCompleted"] = False
+        anime["isNewEp"] = True
 
 def get_github_file():
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE}"
@@ -90,14 +132,11 @@ def main():
     
     added = 0
     for anime_name, seasons in links.items():
-        found_anime = None
-        for anime in anime_db:
-            if anime.get("name", "").lower() == anime_name.lower():
-                found_anime = anime
-                break
+        found_anime = find_best_match(anime_name, anime_db)
         if not found_anime:
             print(f"Anime nahi mila: {anime_name}")
             continue
+        print(f"Matched: '{anime_name}' -> '{found_anime.get('name')}'")
         
         if "seasons" not in found_anime:
             found_anime["seasons"] = {}
@@ -129,37 +168,18 @@ def main():
                 added += 1
             
             existing_eps.sort(key=lambda x: x["ep"])
-        
-        # Badge logic - per anime (sahi jagah pe)
-        total_eps = int(found_anime.get("eps", 0) or 0)
-        all_eps_count = 0
-        max_ep = 0
-        if "seasons" in found_anime:
-            for season in found_anime["seasons"].values():
-                for ep in season.get("episodes", []):
-                    if ep.get("link") and ep.get("link") != "":
-                        all_eps_count += 1
-                        if ep.get("ep", 0) > max_ep:
-                            max_ep = ep.get("ep", 0)
-        
-        if all_eps_count == 0:
-            found_anime["latestUpdate"] = "New Ep Added"
-            found_anime["isSeasonCompleted"] = False
-            found_anime["isNewEp"] = False
-        elif total_eps > 0 and all_eps_count >= total_eps:
-            found_anime["latestUpdate"] = "Completed"
-            found_anime["isSeasonCompleted"] = True
-            found_anime["isNewEp"] = False
-        else:
-            found_anime["latestUpdate"] = f"EP {max_ep} Added"
-            found_anime["isSeasonCompleted"] = False
-            found_anime["isNewEp"] = True
-        print(f"Badge: {anime_name} -> {found_anime['latestUpdate']}")
+    
+    # ===== SAARE ANIME KE BADGES RECALCULATE KARO =====
+    print("\n=== Saare anime ke badges recalculate ===")
+    for anime in anime_db:
+        recalc_badge(anime)
+        print(f"  {anime.get('name')}: {anime.get('latestUpdate')}")
+    # ===== END RECALC =====
     
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
-    s = update_github(new_content, sha, f"Links update: {added} eps + badge fix")
-    print(f"GitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
+    s = update_github(new_content, sha, f"Links update: {added} eps + badge recalc")
+    print(f"\nGitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
 
 if __name__ == "__main__":
     main()
