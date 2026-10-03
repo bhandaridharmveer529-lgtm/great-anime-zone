@@ -27,7 +27,16 @@ def find_best_match(name, anime_db):
 
 def recalc_badge(anime):
     """Anime ka badge recalculate karo"""
-    total_eps = int(anime.get("eps", 0) or 0)
+    # Safe conversion - "?" ya null hone par 0
+    try:
+        eps_val = anime.get("eps", 0)
+        if eps_val in ("?", "", None):
+            total_eps = 0
+        else:
+            total_eps = int(eps_val)
+    except (ValueError, TypeError):
+        total_eps = 0
+    
     current_count = 0
     max_ep = 0
     if "seasons" in anime:
@@ -183,4 +192,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # recalc run
