@@ -70,7 +70,7 @@ def convert_to_our_format(anime, base_id):
         "eps": eps,
         "addedDate": datetime.now().strftime("%Y-%m-%d"),
         "latestUpdate": "New Ep Added",
-        "isSeasonCompleted":False,
+        "isSeasonCompleted": False,
         "desc": desc,
         "genres": genres,
         "genre": genres[0] if genres else "Action",
@@ -112,7 +112,6 @@ def read_existing_data():
         print(f"⚠️ Read error: {e}")
         return []
 
-# YAHAN CHANGE KIYA GAYA HAI - Naya save_data function
 def save_data(existing, new_anime):
     existing_map = {a.get("name", "").lower(): a for a in existing}
     added_count = 0
@@ -126,14 +125,21 @@ def save_data(existing, new_anime):
             existing_map[name_key] = anime
             added_count += 1
         else:
-            # Purane anime me sirf banner update karo (agar khali hai)
+            # Purane anime ka latestUpdate aur isSeasonCompleted MAT chhedo
+            # Sirf missing fields update karo (banner, img, romaji_name)
             old_anime = existing_map[name_key]
             if not old_anime.get("banner") and anime.get("banner"):
                 old_anime["banner"] = anime["banner"]
                 updated_count += 1
+            if not old_anime.get("img") and anime.get("img"):
+                old_anime["img"] = anime["img"]
+                updated_count += 1
+            if not old_anime.get("romaji_name") and anime.get("romaji_name"):
+                old_anime["romaji_name"] = anime["romaji_name"]
+                updated_count += 1
     
     if added_count == 0 and updated_count == 0:
-        print("ℹ️ Koi naya anime ya banner update nahi mila")
+        print("ℹ️ Koi naya anime ya update nahi mila")
         return 0
         
     output = f"const animeDatabase = {json.dumps(existing, indent=4, ensure_ascii=False)};\n"
