@@ -30,7 +30,7 @@ def main():
         if "seasons" in anime:
             for season in anime["seasons"].values():
                 for ep in season.get("episodes", []):
-                    if ep.get("link"):  # Sirf wahi episodes count karo jinka link hai
+                    if ep.get("link") and ep.get("link") != "":
                         current_count += 1
                         if ep.get("ep", 0) > max_ep:
                             max_ep = ep.get("ep", 0)
