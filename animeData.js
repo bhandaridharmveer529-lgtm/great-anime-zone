@@ -531,10 +531,34 @@ const animeDatabase = [
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/24?hash=64e822"
                     },
                     {
+                        "ep": 15,
+                        "title": "Episode 15",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/55?hash=b53b3a",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/55?hash=b53b3a"
+                    },
+                    {
                         "ep": 16,
                         "title": "Episode 16",
                         "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/53?hash=d82c8d",
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/53?hash=d82c8d"
+                    },
+                    {
+                        "ep": 17,
+                        "title": "Episode 17",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/56?hash=9f6140",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/56?hash=9f6140"
+                    },
+                    {
+                        "ep": 18,
+                        "title": "Episode 18",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/57?hash=72b32a",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/57?hash=72b32a"
+                    },
+                    {
+                        "ep": 20,
+                        "title": "Episode 20",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/59?hash=093f65",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/59?hash=093f65"
                     }
                 ],
                 "seasonCompleted": true
