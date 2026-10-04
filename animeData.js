@@ -449,8 +449,8 @@ const animeDatabase = [
         "year": "2021",
         "eps": "11",
         "addedDate": "2026-09-30",
-        "latestUpdate": "EP 8 Added",
-        "isSeasonCompleted": false,
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
         "desc": "When a 34-year-old underachiever gets run over by a bus, his story doesn’t end there. Reincarnated in a new world as an infant, Rudeus will seize every opportunity to live the life he’s always wanted. Armed with new friends, some freshly acquired magical abilities, and the courage to do the things he’s always dreamed of, he’s embarking on an epic adventure—with all of his past experience intact!\n  \n(Source: Funimation, edited)\n  \nNote: The anime pre-screened its 1st and 2nd episode starting on the 27th of December on the Nico Nico Live Broadcasting and D Anime Store services<i/>",
         "genres": [
             "Adventure",
@@ -515,8 +515,20 @@ const animeDatabase = [
                     {
                         "ep": 9,
                         "title": "Episode 9",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/41?hash=3416a7",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/41?hash=3416a7"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/23?hash=e995a6",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/23?hash=e995a6"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/25?hash=92a731",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/25?hash=92a731"
+                    },
+                    {
+                        "ep": 11,
+                        "title": "Episode 11",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/24?hash=64e822",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/24?hash=64e822"
                     },
                     {
                         "ep": 14,
@@ -530,7 +542,7 @@ const animeDatabase = [
         "isNew": false,
         "isTrending": true,
         "romaji_name": "Mushoku Tensei: Isekai Ittara Honki Dasu",
-        "isNewEp": true
+        "isNewEp": false
     },
     {
         "id": 27531,
@@ -625,7 +637,7 @@ const animeDatabase = [
         "year": "2021",
         "eps": "12",
         "addedDate": "2026-10-03",
-        "latestUpdate": "New Ep Added",
+        "latestUpdate": "EP 3 Added",
         "isSeasonCompleted": false,
         "desc": "After the mysterious mana calamity, Rudeus Greyrat and his fierce student Eris Boreas Greyrat are teleported to the Demon Continent. There, they team up with their newfound companion Ruijerd Supardia—the former leader of the Superd's Warrior group—to form \"Dead End,\" a successful adventurer party. Making a name for themselves, the trio journeys across the continent to make their way back home to Fittoa.\n  \nFollowing the advice he received from the faceless god Hitogami, Rudeus saves Kishirika Kishirisu, the Great Emperor of the Demon World, who rewards him by granting him a strange power. Now, as Rudeus masters the powerful ability that offers a number of new opportunities, it might prove to be more than what he bargained for when unexpected dangers threaten to hinder their travels.\n  \n(Source: MAL Rewrite)",
         "genres": [
@@ -643,14 +655,27 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link": ""
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/26?hash=917edc",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/26?hash=917edc"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/27?hash=990ca7",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/27?hash=990ca7"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/28?hash=4bee15",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/28?hash=4bee15"
                     }
                 ]
             }
         },
         "isNew": false,
         "isTrending": true,
-        "isNewEp": false
+        "isNewEp": true
     },
     {
         "id": 99293,
