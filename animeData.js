@@ -662,8 +662,8 @@ const animeDatabase = [
         "year": "2021",
         "eps": "12",
         "addedDate": "2026-10-03",
-        "latestUpdate": "EP 3 Added",
-        "isSeasonCompleted": false,
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
         "desc": "After the mysterious mana calamity, Rudeus Greyrat and his fierce student Eris Boreas Greyrat are teleported to the Demon Continent. There, they team up with their newfound companion Ruijerd Supardia—the former leader of the Superd's Warrior group—to form \"Dead End,\" a successful adventurer party. Making a name for themselves, the trio journeys across the continent to make their way back home to Fittoa.\n  \nFollowing the advice he received from the faceless god Hitogami, Rudeus saves Kishirika Kishirisu, the Great Emperor of the Demon World, who rewards him by granting him a strange power. Now, as Rudeus masters the powerful ability that offers a number of new opportunities, it might prove to be more than what he bargained for when unexpected dangers threaten to hinder their travels.\n  \n(Source: MAL Rewrite)",
         "genres": [
             "Adventure",
@@ -694,13 +694,67 @@ const animeDatabase = [
                         "title": "Episode 3",
                         "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/28?hash=4bee15",
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/28?hash=4bee15"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/30?hash=aa6caf",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/30?hash=aa6caf"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/29?hash=dea2d1",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/29?hash=dea2d1"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/31?hash=5abe23",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/31?hash=5abe23"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/32?hash=3416ce",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/32?hash=3416ce"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/33?hash=f7c8af",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/33?hash=f7c8af"
+                    },
+                    {
+                        "ep": 9,
+                        "title": "Episode 9",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/34?hash=bb83cb",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/34?hash=bb83cb"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/35?hash=bbd6e8",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/35?hash=bbd6e8"
+                    },
+                    {
+                        "ep": 11,
+                        "title": "Episode 11",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/36?hash=2a7352",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/36?hash=2a7352"
+                    },
+                    {
+                        "ep": 12,
+                        "title": "Episode 12",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/37?hash=ad2af3",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/37?hash=ad2af3"
                     }
                 ]
             }
         },
         "isNew": false,
         "isTrending": true,
-        "isNewEp": true
+        "isNewEp": false
     },
     {
         "id": 99293,
