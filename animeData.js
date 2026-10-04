@@ -529,9 +529,15 @@ const animeDatabase = [
                         "title": "Episode 11",
                         "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/24?hash=64e822",
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/24?hash=64e822"
+                    },
+                    {
+                        "ep": 16,
+                        "title": "Episode 16",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/53?hash=d82c8d",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/53?hash=d82c8d"
                     }
-                    
-                ]
+                ],
+                "seasonCompleted": true
             }
         },
         "isNew": false,
