@@ -3,6 +3,7 @@ import re
 import json
 import base64
 import requests
+from datetime import datetime
 from difflib import SequenceMatcher
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
@@ -26,8 +27,6 @@ def find_best_match(name, anime_db):
     return best if best_score >= 0.55 else None
 
 def recalc_badge(anime):
-    """Anime ka badge recalculate karo"""
-    # Safe conversion - "?" ya null hone par 0
     try:
         eps_val = anime.get("eps", 0)
         if eps_val in ("?", "", None):
@@ -140,6 +139,7 @@ def main():
         return
     
     added = 0
+    updated_animes = []
     for anime_name, seasons in links.items():
         found_anime = find_best_match(anime_name, anime_db)
         if not found_anime:
@@ -150,6 +150,7 @@ def main():
         if "seasons" not in found_anime:
             found_anime["seasons"] = {}
         
+        anime_updated = False
         for season_num, eps in seasons.items():
             sk = f"s{season_num}"
             if sk not in found_anime["seasons"]:
@@ -175,8 +176,13 @@ def main():
                     })
                     print(f"Add: {anime_name} S{season_num}E{new_ep['ep']}")
                 added += 1
+                anime_updated = True
             
             existing_eps.sort(key=lambda x: x["ep"])
+        
+        if anime_updated:
+            found_anime["addedDate"] = datetime.now().strftime("%Y-%m-%d")
+            updated_animes.append(found_anime.get("name"))
     
     # ===== SAARE ANIME KE BADGES RECALCULATE KARO =====
     print("\n=== Saare anime ke badges recalculate ===")
@@ -189,6 +195,8 @@ def main():
     new_content = content[:start] + new_db + content[end:]
     s = update_github(new_content, sha, f"Links update: {added} eps + badge recalc")
     print(f"\nGitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
+    if updated_animes:
+        print(f"Top pe aane wale anime: {', '.join(updated_animes)}")
 
 if __name__ == "__main__":
     main()
