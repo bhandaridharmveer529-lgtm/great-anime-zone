@@ -653,7 +653,7 @@ const animeDatabase = [
         "year": "2023",
         "eps": "13",
         "addedDate": "2026-10-02",
-        "latestUpdate": "New Ep Added",
+        "latestUpdate": "EP 9 Added",
         "isSeasonCompleted": false,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
         "genres": [
@@ -674,12 +674,72 @@ const animeDatabase = [
                         "link": ""
                     }
                 ]
+            },
+            "s2": {
+                "seasonName": "Season 2",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/53?hash=b5b45e",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/53?hash=b5b45e"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/52?hash=a4fb82",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/52?hash=a4fb82"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/51?hash=83e9a3",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/51?hash=83e9a3"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/54?hash=b8ea18",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/54?hash=b8ea18"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/50?hash=131ac5",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/50?hash=131ac5"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/46?hash=dc0b2b",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/46?hash=dc0b2b"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/48?hash=1657cd",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/48?hash=1657cd"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/49?hash=526c30",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/49?hash=526c30"
+                    },
+                    {
+                        "ep": 9,
+                        "title": "Episode 9",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/47?hash=6a7926",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/47?hash=6a7926"
+                    }
+                ]
             }
         },
         "isNew": false,
         "isTrending": true,
         "romaji_name": "Mushoku Tensei II: Isekai Ittara Honki Dasu",
-        "isNewEp": false
+        "isNewEp": true
     },
     {
         "id": 29152,
