@@ -574,6 +574,66 @@ const animeDatabase = [
                     }
                 ],
                 "seasonCompleted": true
+            },
+            "s2": {
+                "seasonName": "Season 2",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 0,
+                        "title": "Episode 0",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/94?hash=f4b9ec",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/94?hash=f4b9ec"
+                    },
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/93?hash=98dce8",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/93?hash=98dce8"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/92?hash=92cc22",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/92?hash=92cc22"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/95?hash=812b4b",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/95?hash=812b4b"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/91?hash=54229a",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/91?hash=54229a"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/87?hash=c7e124",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/87?hash=c7e124"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/89?hash=764796",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/89?hash=764796"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/90?hash=861398",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/90?hash=861398"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/88?hash=2a38a4",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/88?hash=2a38a4"
+                    }
+                ]
             }
         },
         "isNew": false,
