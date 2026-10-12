@@ -86,8 +86,9 @@
             
             <p class="w-desc" id="wDesc">Loading description...</p>
 
-            <div class="season-header-box">
+            <div class="season-header-box" id="seasonHeaderBox" style="display: none;">
     <div class="ep-section-title">Episodes List</div>
+    <select id="seasonSelectDropdown" class="season-selector" onchange="handleSeasonChange(this.value)"></select>
             </div>
 
             <div id="zipDownloadContainer" class="zip-box" style="display: none;"></div>
@@ -123,14 +124,8 @@ if (db && Array.isArray(db)) {
     document.getElementById('wDesc').innerText = currentAnime.desc || "";
                 
   if (currentAnime.seasons && Object.keys(currentAnime.seasons).length > 0) {
-    let seasonKeys = Object.keys(currentAnime.seasons);
-    currentSeasonKey = seasonKeys[0];
-    for (let key of seasonKeys) {
-        if (currentAnime.seasons[key].episodes && currentAnime.seasons[key].episodes.length > 0) {
-            currentSeasonKey = key;
-            break;
-        }
-    }
+    currentSeasonKey = Object.keys(currentAnime.seasons)[0];
+    renderSeasonDropdown();
     renderEpisodes(currentSeasonKey);
 } else {
                 
