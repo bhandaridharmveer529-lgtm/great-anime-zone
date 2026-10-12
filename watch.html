@@ -121,12 +121,20 @@ if (db && Array.isArray(db)) {
     document.getElementById('wRating').innerText = currentAnime.rating || "8.5";
     document.getElementById('wLang').innerText = currentAnime.lang || currentAnime.sub || "Hindi Dubbed";
     document.getElementById('wDesc').innerText = currentAnime.desc || "";
-
-    if (currentAnime.seasons && Object.keys(currentAnime.seasons).length > 0) {
-        currentSeasonKey = Object.keys(currentAnime.seasons)[0];
-        renderSeasonDropdown();
-        renderEpisodes(currentSeasonKey);
-    } else {
+                
+  if (currentAnime.seasons && Object.keys(currentAnime.seasons).length > 0) {
+    let seasonKeys = Object.keys(currentAnime.seasons);
+    currentSeasonKey = seasonKeys[0];
+    for (let key of seasonKeys) {
+        if (currentAnime.seasons[key].episodes && currentAnime.seasons[key].episodes.length > 0) {
+            currentSeasonKey = key;
+            break;
+        }
+    }
+    renderEpisodes(currentSeasonKey);
+} else {
+                
+  
         document.getElementById('wEpGrid').innerHTML = 
             '<div style="color: #94a3b8; text-align: center; padding: 20px;">Episodes coming soon...</div>';
     }
