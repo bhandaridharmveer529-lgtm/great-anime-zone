@@ -448,7 +448,7 @@ const animeDatabase = [
         "rating": "8.2",
         "year": "2021",
         "eps": "11",
-        "addedDate": "2026-09-30",
+        "addedDate": "2026-10-12",
         "latestUpdate": "Completed",
         "isSeasonCompleted": true,
         "desc": "When a 34-year-old underachiever gets run over by a bus, his story doesn’t end there. Reincarnated in a new world as an infant, Rudeus will seize every opportunity to live the life he’s always wanted. Armed with new friends, some freshly acquired magical abilities, and the courage to do the things he’s always dreamed of, he’s embarking on an epic adventure—with all of his past experience intact!\n  \n(Source: Funimation, edited)\n  \nNote: The anime pre-screened its 1st and 2nd episode starting on the 27th of December on the Nico Nico Live Broadcasting and D Anime Store services<i/>",
@@ -658,8 +658,8 @@ const animeDatabase = [
         "rating": "8.1",
         "year": "2023",
         "eps": "13",
-        "addedDate": "2026-10-02",
-        "latestUpdate": "EP 9 Added",
+        "addedDate": "2026-10-12",
+        "latestUpdate": "EP 10 Added",
         "isSeasonCompleted": false,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
         "genres": [
@@ -738,6 +738,12 @@ const animeDatabase = [
                         "title": "Episode 9",
                         "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/47?hash=6a7926",
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/47?hash=6a7926"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/55?hash=bfbc8f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/55?hash=bfbc8f"
                     }
                 ]
             }
@@ -799,7 +805,7 @@ const animeDatabase = [
         "rating": "8.5",
         "year": "2021",
         "eps": "12",
-        "addedDate": "2026-10-03",
+        "addedDate": "2026-10-12",
         "latestUpdate": "Completed",
         "isSeasonCompleted": true,
         "desc": "After the mysterious mana calamity, Rudeus Greyrat and his fierce student Eris Boreas Greyrat are teleported to the Demon Continent. There, they team up with their newfound companion Ruijerd Supardia—the former leader of the Superd's Warrior group—to form \"Dead End,\" a successful adventurer party. Making a name for themselves, the trio journeys across the continent to make their way back home to Fittoa.\n  \nFollowing the advice he received from the faceless god Hitogami, Rudeus saves Kishirika Kishirisu, the Great Emperor of the Demon World, who rewards him by granting him a strange power. Now, as Rudeus masters the powerful ability that offers a number of new opportunities, it might prove to be more than what he bargained for when unexpected dangers threaten to hinder their travels.\n  \n(Source: MAL Rewrite)",
