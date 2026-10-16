@@ -395,7 +395,40 @@ function filterGenre(genre, el) {
     renderGrid();
 }
 
-function goWatch(id) { window.location.href = `watch.html?id=${id}`; }
+function goWatch(id) {
+    const anime = animeDatabase.find(a => String(a.id) === String(id));
+    let seasonParam = '';
+    if (anime && anime.name) {
+        const n = anime.name.toLowerCase();
+        
+        // Season number detect karo
+        let sNum = null;
+        let sMatch = n.match(/season\s*(\d+)/);
+        if (sMatch) {
+            sNum = sMatch[1];
+        } else {
+            const romanMap = { ' ix': '9', ' viii': '8', ' vii': '7', ' vi': '6', ' v': '5', ' iv': '4', ' iii': '3', ' ii': '2' };
+            for (let key in romanMap) {
+                if (n.includes(key)) { sNum = romanMap[key]; break; }
+            }
+        }
+        
+        // Part / Cour number detect karo
+        let pNum = null;
+        let pMatch = n.match(/(?:part|cour)\s*(\d+)/);
+        if (pMatch) pNum = pMatch[1];
+        
+        // Priority: Combined > Season > Part
+        if (sNum && pNum) {
+            seasonParam = '&season=s' + sNum + 'p' + pNum;
+        } else if (sNum) {
+            seasonParam = '&season=s' + sNum;
+        } else if (pNum) {
+            seasonParam = '&season=s1p' + pNum;
+        }
+    }
+    window.location.href = `watch.html?id=${id}${seasonParam}`;
+        }
 
 function toggleHeart(el) {
     el.classList.toggle('active');
