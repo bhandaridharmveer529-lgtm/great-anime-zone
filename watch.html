@@ -104,6 +104,7 @@
         let currentEpisodesList = [];     
  const urlParams = new URLSearchParams(window.location.search);
  const animeKey = urlParams.get('id') || urlParams.get('name');
+ const seasonParam = urlParams.get('season');           
 
 let db = typeof animeDatabase !== 'undefined' ? animeDatabase : null;
 
@@ -124,7 +125,11 @@ if (db && Array.isArray(db)) {
     document.getElementById('wDesc').innerText = currentAnime.desc || "";
                 
   if (currentAnime.seasons && Object.keys(currentAnime.seasons).length > 0) {
-    currentSeasonKey = Object.keys(currentAnime.seasons)[0];
+    if (seasonParam && currentAnime.seasons[seasonParam]) {
+        currentSeasonKey = seasonParam;
+    } else {
+        currentSeasonKey = Object.keys(currentAnime.seasons)[0];
+    }
     renderSeasonDropdown();
     renderEpisodes(currentSeasonKey);
 } else {
