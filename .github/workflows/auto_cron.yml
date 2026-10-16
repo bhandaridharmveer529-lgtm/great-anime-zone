@@ -37,4 +37,6 @@ jobs:
           git add animeData.js
           git add anime_names.txt
           git commit -m "🤖 Auto-updated animeData.js with new anime" || exit 0
-          git push       
+          git pull --rebase origin main
+          git push
+          
