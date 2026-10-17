@@ -545,3 +545,11 @@ const animeDatabase = [
         "isTrending": true
     }
 ];
+
+
+const heroAnimeNames = [
+    "Naruto",
+    "Solo Leveling",
+    "Overlord",
+    "The Elusive Samurai"
+];
