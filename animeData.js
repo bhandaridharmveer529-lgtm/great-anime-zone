@@ -38,7 +38,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67088,
@@ -78,7 +79,8 @@ const animeDatabase = [
             }
         },
         "isNew": true,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67089,
@@ -116,7 +118,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67090,
@@ -155,7 +158,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67091,
@@ -193,7 +197,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67092,
@@ -231,7 +236,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67093,
@@ -271,7 +277,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67094,
@@ -310,7 +317,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67095,
@@ -349,7 +357,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67096,
@@ -387,7 +396,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67097,
@@ -425,7 +435,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67098,
@@ -439,9 +450,9 @@ const animeDatabase = [
         "rating": "8.2",
         "year": "2021",
         "eps": "11",
-        "addedDate": "2026-10-16",
-        "latestUpdate": "New Ep Added",
-        "isSeasonCompleted": false,
+        "addedDate": "2026-10-17",
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
         "desc": "When a 34-year-old underachiever gets run over by a bus, his story doesn’t end there. Reincarnated in a new world as an infant, Rudeus will seize every opportunity to live the life he’s always wanted. Armed with new friends, some freshly acquired magical abilities, and the courage to do the things he’s always dreamed of, he’s embarking on an epic adventure—with all of his past experience intact!\n  \n(Source: Funimation, edited)\n  \nNote: The anime pre-screened its 1st and 2nd episode starting on the 27th of December on the Nico Nico Live Broadcasting and D Anime Store services<i/>",
         "genres": [
             "Adventure",
@@ -458,13 +469,81 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link": ""
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/26?hash=917edc",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/26?hash=917edc"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/27?hash=990ca7",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/27?hash=990ca7"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/28?hash=4bee15",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/28?hash=4bee15"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/30?hash=aa6caf",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/30?hash=aa6caf"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/29?hash=dea2d1",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/29?hash=dea2d1"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/31?hash=5abe23",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/31?hash=5abe23"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/32?hash=3416ce",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/32?hash=3416ce"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/33?hash=f7c8af",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/33?hash=f7c8af"
+                    },
+                    {
+                        "ep": 9,
+                        "title": "Episode 9",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/34?hash=bb83cb",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/34?hash=bb83cb"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/35?hash=bbd6e8",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/35?hash=bbd6e8"
+                    },
+                    {
+                        "ep": 11,
+                        "title": "Episode 11",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/36?hash=2a7352",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/36?hash=2a7352"
+                    },
+                    {
+                        "ep": 12,
+                        "title": "Episode 12",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/37?hash=ad2af3",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/37?hash=ad2af3"
                     }
                 ]
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 67099,
@@ -478,8 +557,8 @@ const animeDatabase = [
         "rating": "8.1",
         "year": "2023",
         "eps": "13",
-        "addedDate": "2026-10-16",
-        "latestUpdate": "New Ep Added",
+        "addedDate": "2026-10-17",
+        "latestUpdate": "EP 10 Added",
         "isSeasonCompleted": false,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
         "genres": [
@@ -500,10 +579,77 @@ const animeDatabase = [
                         "link": ""
                     }
                 ]
+            },
+            "s2": {
+                "seasonName": "Season 2",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/53?hash=b5b45e",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/53?hash=b5b45e"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/52?hash=a4fb82",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/52?hash=a4fb82"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/51?hash=83e9a3",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/51?hash=83e9a3"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/54?hash=b8ea18",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/54?hash=b8ea18"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/50?hash=131ac5",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/50?hash=131ac5"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/46?hash=dc0b2b",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/46?hash=dc0b2b"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/48?hash=1657cd",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/48?hash=1657cd"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/49?hash=526c30",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/49?hash=526c30"
+                    },
+                    {
+                        "ep": 9,
+                        "title": "Episode 9",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/47?hash=6a7926",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/47?hash=6a7926"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/55?hash=bfbc8f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/55?hash=bfbc8f"
+                    }
+                ]
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": true
     },
     {
         "id": 67100,
@@ -542,7 +688,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     }
 ];
 
