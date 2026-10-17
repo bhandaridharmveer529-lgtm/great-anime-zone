@@ -4,7 +4,7 @@ const animeDatabase = [
         "romaji_name": "NARUTO",
         "name": "Naruto",
         "title": "Naruto",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20-HHxhPj5JD13a.jpg",
+        "banner": "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Naruto%20Banner.jpg"
         "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20-dE6UHbFFg1A5.jpg",
         "sub": "Hindi Dubbed",
         "lang": "Hindi Dubbed",
@@ -85,7 +85,7 @@ const animeDatabase = [
         "romaji_name": "Ore dake Level Up na Ken",
         "name": "Solo Leveling",
         "title": "Solo Leveling",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg",
+        "banner": "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Solo%20Leveling%20Banner.jpg"
         "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx151807-it355ZgzquUd.png",
         "sub": "Hindi Dubbed",
         "lang": "Hindi Dubbed",
@@ -356,7 +356,7 @@ const animeDatabase = [
         "romaji_name": "Overlord",
         "name": "Overlord",
         "title": "Overlord",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20832-NswCiSYMoI2k.jpg",
+        "banner": "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/Overlord%20Banner.jpg"
         "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20832-vUNm5zrYWifc.jpg",
         "sub": "Hindi Dubbed",
         "lang": "Hindi Dubbed",
@@ -394,7 +394,7 @@ const animeDatabase = [
         "romaji_name": "Nige Jouzu no Wakagimi",
         "name": "The Elusive Samurai",
         "title": "The Elusive Samurai",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/162896-kcJr1VCSTrQ0.jpg",
+        "banner": "https://raw.githubusercontent.com/bhandaridharmveer529-lgtm/great-anime-zone/refs/heads/main/The%20Elusive%20Samurai%20Banner.jpg"
         "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx162896-hSMTVceb50GY.jpg",
         "sub": "Hindi Dubbed",
         "lang": "Hindi Dubbed",
