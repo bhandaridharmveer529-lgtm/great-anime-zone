@@ -635,18 +635,7 @@ const animeDatabase = [
         ],
         "genre": "Adventure",
         "seasons": {
-            "s1": {
-                "seasonName": "Season 1",
-                "seasonZip": "",
-                "episodes": [
-                    {
-                        "ep": 1,
-                        "title": "Episode 1",
-                        "link": ""
-                    }
-                ]
-            },
-            "s2": {
+             "s2": {
                 "seasonName": "Season 2",
                 "seasonZip": "",
                 "episodes": [
