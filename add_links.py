@@ -14,35 +14,6 @@ LINKS_FILE = "links.txt"
 def similarity(a, b):
     return SequenceMatcher(None, a.lower().strip(), b.lower().strip()).ratio()
 
-# 🎯 PAKKA FIX: Sirf 100% exact naam match karo
-found_anime = None
-for a in anime_db:
-    if a.get("name", "").strip().lower() == anime_name.strip().lower():
-        found_anime = a
-        break
-        
-if not found_anime:
-    print(f"❌ Exact match nahi mila: '{anime_name}' (Skip kiya)")
-    continue
-    # 1. SABSE PEHLE EXACT MATCH DHUNDHO
-    name_lower = name.lower().strip()
-    for anime in anime_db:
-        if anime.get("name", "").lower().strip() == name_lower:
-            return anime
-            
-    # 2. Agar exact match nahi mila, tabhi purana milta-julta (fuzzy) logic use karo
-    best, best_score = None, 0
-    for anime in anime_db:
-        db_name = anime.get("name", "")
-        score = similarity(name, db_name)
-        if name.lower() in db_name.lower() or db_name.lower() in name.lower():
-            score = max(score, 0.8)
-        if score > best_score:
-            best_score = score
-            best = anime
-    return best if best_score >= 0.55 else None
-    
-# 🎯 YAHAN SIRF EK RECALC_BADGE FUNCTION HAI
 def recalc_badge(anime):
     try:
         eps_val = anime.get("eps", 0)
@@ -55,7 +26,7 @@ def recalc_badge(anime):
     
     current_count = 0
     max_ep = 0
-    latest_season = 1 
+    latest_season = 1
     
     if "seasons" in anime:
         for season_key, season_data in anime["seasons"].items():
@@ -168,12 +139,20 @@ def main():
     
     added = 0
     updated_animes = []
+    
     for anime_name, seasons in links.items():
-        found_anime = find_best_match(anime_name, anime_db)
+        # 🎯 YAHAN HAI PAKKA FIX: Sirf 100% exact naam match karega
+        found_anime = None
+        for a in anime_db:
+            if a.get("name", "").strip().lower() == anime_name.strip().lower():
+                found_anime = a
+                break
+                
         if not found_anime:
-            print(f"Anime nahi mila: {anime_name}")
+            print(f"❌ Exact match nahi mila: '{anime_name}' (Skip kiya)")
             continue
-        print(f"Matched: '{anime_name}' -> '{found_anime.get('name')}'")
+            
+        print(f"✅ Matched: '{anime_name}'")
         
         if "seasons" not in found_anime:
             found_anime["seasons"] = {}
@@ -212,19 +191,15 @@ def main():
             found_anime["addedDate"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             updated_animes.append(found_anime.get("name"))
     
-    # ===== SAARE ANIME KE BADGES RECALCULATE KARO =====
     print("\n=== Saare anime ke badges recalculate ===")
     for anime in anime_db:
         recalc_badge(anime)
         print(f"  {anime.get('name')}: {anime.get('latestUpdate')}")
-    # ===== END RECALC =====
     
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
     s = update_github(new_content, sha, f"Links update: {added} eps + badge recalc")
     print(f"\nGitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
-    if updated_animes:
-        print(f"Top pe aane wale anime: {', '.join(updated_animes)}")
 
 if __name__ == "__main__":
     main()
