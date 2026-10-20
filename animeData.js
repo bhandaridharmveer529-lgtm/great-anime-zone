@@ -605,6 +605,18 @@ const animeDatabase = [
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/37?hash=ad2af3"
                     }
                 ]
+            },
+            "s2": {
+                "seasonName": "Season 2",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 14,
+                        "title": "Episode 14",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/113?hash=73278a",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/113?hash=73278a"
+                    }
+                ]
             }
         },
         "isNew": false,
