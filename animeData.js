@@ -796,3 +796,11 @@ const animeDatabase = [
         "isTrending": true
     }
 ];
+
+const heroAnimeNames = [
+    "Naruto",
+    "Solo Leveling",
+    "Overlord",
+    "The Elusive Samurai",
+    "Mushoku Tensei: Jobless Reincarnation" // Ye naya add kar sakte ho
+];
