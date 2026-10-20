@@ -14,7 +14,16 @@ LINKS_FILE = "links.txt"
 def similarity(a, b):
     return SequenceMatcher(None, a.lower().strip(), b.lower().strip()).ratio()
 
-def find_best_match(name, anime_db):
+# 🎯 PAKKA FIX: Sirf 100% exact naam match karo
+found_anime = None
+for a in anime_db:
+    if a.get("name", "").strip().lower() == anime_name.strip().lower():
+        found_anime = a
+        break
+        
+if not found_anime:
+    print(f"❌ Exact match nahi mila: '{anime_name}' (Skip kiya)")
+    continue
     # 1. SABSE PEHLE EXACT MATCH DHUNDHO
     name_lower = name.lower().strip()
     for anime in anime_db:
