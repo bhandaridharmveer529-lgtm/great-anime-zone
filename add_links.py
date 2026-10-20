@@ -15,6 +15,13 @@ def similarity(a, b):
     return SequenceMatcher(None, a.lower().strip(), b.lower().strip()).ratio()
 
 def find_best_match(name, anime_db):
+    # 1. SABSE PEHLE EXACT MATCH DHUNDHO
+    name_lower = name.lower().strip()
+    for anime in anime_db:
+        if anime.get("name", "").lower().strip() == name_lower:
+            return anime
+            
+    # 2. Agar exact match nahi mila, tabhi purana milta-julta (fuzzy) logic use karo
     best, best_score = None, 0
     for anime in anime_db:
         db_name = anime.get("name", "")
@@ -25,7 +32,7 @@ def find_best_match(name, anime_db):
             best_score = score
             best = anime
     return best if best_score >= 0.55 else None
-
+    
 # 🎯 YAHAN SIRF EK RECALC_BADGE FUNCTION HAI
 def recalc_badge(anime):
     try:
