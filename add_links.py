@@ -158,7 +158,7 @@ def main():
             found_anime["seasons"] = {}
         
         anime_updated = False
-      for season_num, eps in seasons.items():
+          for season_num, eps in seasons.items():
              sk = f"s{season_num}"
     
          # 🎯 NAYA FIX: Check karo ki naam aur season match kar rahe hain ya nahi
