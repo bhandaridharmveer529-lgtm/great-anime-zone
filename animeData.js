@@ -450,7 +450,7 @@ const animeDatabase = [
         "rating": "8.2",
         "year": "2021",
         "eps": "23",
-        "addedDate": "2026-10-17",
+        "addedDate": "2026-10-20 15:36:03",
         "latestUpdate": "Completed",
         "isSeasonCompleted": true,
         "desc": "When a 34-year-old underachiever gets run over by a bus, his story doesn’t end there. Reincarnated in a new world as an infant, Rudeus will seize every opportunity to live the life he’s always wanted. Armed with new friends, some freshly acquired magical abilities, and the courage to do the things he’s always dreamed of, he’s embarking on an epic adventure—with all of his past experience intact!\n  \n(Source: Funimation, edited)\n  \nNote: The anime pre-screened its 1st and 2nd episode starting on the 27th of December on the Nico Nico Live Broadcasting and D Anime Store services<i/>",
@@ -613,8 +613,8 @@ const animeDatabase = [
                     {
                         "ep": 11,
                         "title": "Episode 11",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/107?hash=a97da6",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/107?hash=a97da6"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/56?hash=cd3795",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/56?hash=cd3795"
                     }
                 ]
             }
@@ -635,8 +635,8 @@ const animeDatabase = [
         "rating": "8.1",
         "year": "2023",
         "eps": "25",
-        "addedDate": "2026-10-17",
-        "latestUpdate": "s2 ep10 Added",
+        "addedDate": "2026-10-20 15:36:03",
+        "latestUpdate": "S2 EP 10 Added",
         "isSeasonCompleted": false,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
         "genres": [
@@ -766,7 +766,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     },
     {
         "id": 6577,
@@ -805,7 +806,8 @@ const animeDatabase = [
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     }
 ];
 
