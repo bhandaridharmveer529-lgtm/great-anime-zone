@@ -193,7 +193,7 @@ def main():
             existing_eps.sort(key=lambda x: x["ep"])
         
         if anime_updated:
-            found_anime["addedDate"] = datetime.now().strftime("%Y-%m-%d")
+            found_anime["addedDate"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             updated_animes.append(found_anime.get("name"))
     
     # ===== SAARE ANIME KE BADGES RECALCULATE KARO =====
