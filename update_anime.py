@@ -31,7 +31,6 @@ def search_anime(name):
         episodes
         genres
         seasonYear
-        seasonNumber
         status
       }
     }"""
@@ -43,18 +42,19 @@ def search_anime(name):
         print(f"❌ Error: {e}")
         return None
 
-def get_season_number(title, anilist_season=None):
-    # 1. Agar AniList ne seasonNumber diya hai, toh wahi use karo
-    if anilist_season and str(anilist_season).isdigit():
-        return int(anilist_season)
+# 🎯 NAYA FIX: Title ke aadhar par season detect karne ka function
+def get_season_number_from_title(title):
+    title_lower = title.lower()
     
-    # 2. Agar title me "Season 3" ya "S3" likha hai, toh use karo
-    match = re.search(r'(?:Season|S)\s*(\d+)', title, re.IGNORECASE)
-    if match:
-        return int(match.group(1))
-    
-    # 3. Agar kuch nahi mila, toh S1 maan lo
-    return 1
+    # Check for "Season 3", "3rd Season", "III"
+    if "season 3" in title_lower or "3rd season" in title_lower or " iii" in title_lower or title_lower.endswith(" iii"):
+        return 3
+    # Check for "Season 2", "2nd Season", "II"
+    elif "season 2" in title_lower or "2nd season" in title_lower or " ii" in title_lower or title_lower.endswith(" ii"):
+        return 2
+    # Default to Season 1
+    else:
+        return 1
 
 def convert_to_our_format(anime, base_id):
     title = anime.get("title", {}).get("english") or \
@@ -71,9 +71,8 @@ def convert_to_our_format(anime, base_id):
     genres = anime.get("genres") or ["Action"]
     is_new = anime.get("status") == "RELEASING"
     
-    # 🎯 SEASON NUMBER DETECT KARO
-    anilist_season = anime.get("seasonNumber")
-    season_num = get_season_number(title, anilist_season)
+    # 🎯 SEASON DETECT KARO TITLE SE
+    season_num = get_season_number_from_title(title)
     season_key = f"s{season_num}"
     season_name = f"Season {season_num}"
     
@@ -98,7 +97,7 @@ def convert_to_our_format(anime, base_id):
         "genres": genres,
         "genre": genres[0] if genres else "Action",
         "seasons": {
-            season_key: {  # <--- Ab dynamic hoga (s1, s2, s3)
+            season_key: {  # <--- Ab exact s1, s2 ya s3 banega
                 "seasonName": season_name,
                 "seasonZip": "",
                 "episodes": [{"ep": 1, "title": "Episode 1", "link": ""}]
@@ -178,7 +177,7 @@ def save_data(existing, new_anime):
     return added_count + updated_count
 
 def run_auto_updater():
-    print("🚀 Anime Auto Updater (Name-based)\n")
+    print("🚀 Anime Auto Updater (Season-based Fix)\n")
     names = read_names()
     if not names:
         print("❌ anime_names.txt khali hai")
