@@ -26,6 +26,7 @@ def find_best_match(name, anime_db):
             best = anime
     return best if best_score >= 0.55 else None
 
+# 🎯 YAHAN SIRF EK RECALC_BADGE FUNCTION HAI
 def recalc_badge(anime):
     try:
         eps_val = anime.get("eps", 0)
@@ -38,13 +39,20 @@ def recalc_badge(anime):
     
     current_count = 0
     max_ep = 0
+    latest_season = 1 
+    
     if "seasons" in anime:
-        for season in anime["seasons"].values():
-            for ep in season.get("episodes", []):
+        for season_key, season_data in anime["seasons"].items():
+            season_num = 1
+            if season_key.startswith("s") and season_key[1:].isdigit():
+                season_num = int(season_key[1:])
+                
+            for ep in season_data.get("episodes", []):
                 if ep.get("link") and ep.get("link") != "":
                     current_count += 1
-                    if ep.get("ep", 0) > max_ep:
+                    if ep.get("ep", 0) >= max_ep:
                         max_ep = ep.get("ep", 0)
+                        latest_season = season_num
     
     if current_count == 0:
         anime["latestUpdate"] = "New Ep Added"
@@ -55,7 +63,11 @@ def recalc_badge(anime):
         anime["isSeasonCompleted"] = True
         anime["isNewEp"] = False
     else:
-        anime["latestUpdate"] = f"EP {max_ep} Added"
+        if latest_season > 1:
+            anime["latestUpdate"] = f"S{latest_season} EP {max_ep} Added"
+        else:
+            anime["latestUpdate"] = f"EP {max_ep} Added"
+            
         anime["isSeasonCompleted"] = False
         anime["isNewEp"] = True
 
