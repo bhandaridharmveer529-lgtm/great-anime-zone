@@ -716,15 +716,83 @@ const animeDatabase = [
         "isNew": false,
         "isTrending": true,
         "isNewEp": true
+    },
+    {
+        "id": 6576,
+        "romaji_name": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+        "name": "Mushoku Tensei: Jobless Reincarnation Season 3",
+        "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178789-9nHWmoRLlcLu.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx178789-hNXjKFzUq7mk.jpg",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "8.6",
+        "year": "2026",
+        "eps": "14",
+        "addedDate": "2026-10-20",
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
+        "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Ecchi",
+            "Fantasy"
+        ],
+        "genre": "Adventure",
+        "seasons": {
+            "s3": {
+                "seasonName": "Season 3",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
+    },
+    {
+        "id": 6577,
+        "romaji_name": "FAIRY TAIL",
+        "name": "Fairy Tail",
+        "title": "Fairy Tail",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/6702-VSHyctSAeUBS.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "7.2",
+        "year": "2009",
+        "eps": "175",
+        "addedDate": "2026-10-20",
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
+        "desc": "Across the Fiore kingdom, wizards join guilds and make their pay by filling magical needs—but one guild has a reputation as the roughest, rowdiest, most dangerous of all: Fairy Tail! \nWhen four young Fairy Tail members unite, their bond is forged by a power found in neither muscle nor magic and grows stronger with every mission. Whatever you do, don't mess with these friends or you'll get a taste of Natsu's flaming fist or Gray's ice hammer, suffer a painful blow from one of Lucy's celestial spirits or catch the edge of Erza's mighty blade! Whether they're stopping demons from devastating the world or wrestling in the mess hall, this mystical team manages to inflict as much damage to their rivals as they do to the surrounding area! \n \n(Source: Funimation)",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy"
+        ],
+        "genre": "Action",
+        "seasons": {
+            "s1": {
+                "seasonName": "Season 1",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
     }
-    
-    
-];
-
-
-const heroAnimeNames = [
-    "Naruto",
-    "Solo Leveling",
-    "Overlord",
-    "The Elusive Samurai"
 ];
