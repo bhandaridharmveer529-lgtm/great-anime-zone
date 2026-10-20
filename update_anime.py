@@ -2,6 +2,7 @@ import json
 import os
 import requests
 import time
+import re
 from datetime import datetime
 
 DATA_FILE = "animeData.js"
@@ -30,6 +31,7 @@ def search_anime(name):
         episodes
         genres
         seasonYear
+        seasonNumber
         status
       }
     }"""
@@ -40,6 +42,19 @@ def search_anime(name):
     except Exception as e:
         print(f"❌ Error: {e}")
         return None
+
+def get_season_number(title, anilist_season=None):
+    # 1. Agar AniList ne seasonNumber diya hai, toh wahi use karo
+    if anilist_season and str(anilist_season).isdigit():
+        return int(anilist_season)
+    
+    # 2. Agar title me "Season 3" ya "S3" likha hai, toh use karo
+    match = re.search(r'(?:Season|S)\s*(\d+)', title, re.IGNORECASE)
+    if match:
+        return int(match.group(1))
+    
+    # 3. Agar kuch nahi mila, toh S1 maan lo
+    return 1
 
 def convert_to_our_format(anime, base_id):
     title = anime.get("title", {}).get("english") or \
@@ -55,6 +70,14 @@ def convert_to_our_format(anime, base_id):
     desc = desc.replace("<b>", "").replace("</b>", "").strip()
     genres = anime.get("genres") or ["Action"]
     is_new = anime.get("status") == "RELEASING"
+    
+    # 🎯 SEASON NUMBER DETECT KARO
+    anilist_season = anime.get("seasonNumber")
+    season_num = get_season_number(title, anilist_season)
+    season_key = f"s{season_num}"
+    season_name = f"Season {season_num}"
+    
+    print(f"  🎬 {title} -> {season_name} ({season_key})")
     
     return {
         "id": base_id,
@@ -75,8 +98,8 @@ def convert_to_our_format(anime, base_id):
         "genres": genres,
         "genre": genres[0] if genres else "Action",
         "seasons": {
-            "s1": {
-                "seasonName": "Season 1",
+            season_key: {  # <--- Ab dynamic hoga (s1, s2, s3)
+                "seasonName": season_name,
                 "seasonZip": "",
                 "episodes": [{"ep": 1, "title": "Episode 1", "link": ""}]
             }
@@ -120,13 +143,10 @@ def save_data(existing, new_anime):
     for anime in new_anime:
         name_key = anime["name"].lower()
         if name_key not in existing_map:
-            # Naya anime add karo
             existing.append(anime)
             existing_map[name_key] = anime
             added_count += 1
         else:
-            # Purane anime ka latestUpdate aur isSeasonCompleted MAT chhedo
-            # Sirf missing fields update karo (banner, img, romaji_name)
             old_anime = existing_map[name_key]
             if not old_anime.get("banner") and anime.get("banner"):
                 old_anime["banner"] = anime["banner"]
@@ -144,7 +164,6 @@ def save_data(existing, new_anime):
         
     output = f"const animeDatabase = {json.dumps(existing, indent=4, ensure_ascii=False)};\n"
     
-    # Purana heroSlides wala data preserve karo
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r", encoding="utf-8") as f:
             old = f.read()
