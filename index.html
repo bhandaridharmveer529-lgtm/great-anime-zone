@@ -336,8 +336,8 @@ function buildCard(a) {
 // LATEST FIRST SORT — NAYA
 function sortLatestFirst(arr) {
     return [...arr].sort((a, b) => {
-        const dateA = new Date(a.addedDate || '2020-01-01');
-        const dateB = new Date(b.addedDate || '2020-01-01');
+        const dateA = new Date(a.addedDate || '2020-01-01T00:00:00');
+        const dateB = new Date(b.addedDate || '2020-01-01T00:00:00');
         return dateB - dateA;
     });
 }
