@@ -159,13 +159,27 @@ def main():
         
         anime_updated = False
         for season_num, eps in seasons.items():
-            sk = f"s{season_num}"
-            if sk not in found_anime["seasons"]:
-                found_anime["seasons"][sk] = {
-                    "seasonName": f"Season {season_num}",
-                    "seasonZip": "",
-                    "episodes": []
-                }
+    sk = f"s{season_num}"
+    
+    # 🎯 NAYA FIX: Check karo ki naam aur season match kar rahe hain ya nahi
+    anime_name_lower = found_anime.get("name", "").lower()
+    
+    # Agar links.txt me S2 hai, lekin animeData me anime S1 hai, toh skip karo
+    if season_num == 2 and ("season 2" not in anime_name_lower and " ii" not in anime_name_lower):
+        print(f"❌ Galti pakdi: '{found_anime.get('name')}' (S1) me S2 ka link daalne ki koshish. Skip.")
+        continue
+        
+    if season_num == 3 and ("season 3" not in anime_name_lower and " iii" not in anime_name_lower):
+        print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S3 ka link daalne ki koshish. Skip.")
+        continue
+
+    # Agar check pass ho gaya, toh naya block banao (agar nahi hai toh)
+    if sk not in found_anime["seasons"]:
+        found_anime["seasons"][sk] = {
+            "seasonName": f"Season {season_num}",
+            "seasonZip": "",
+            "episodes": []
+        }
             
             existing_eps = found_anime["seasons"][sk]["episodes"]
             for new_ep in eps:
