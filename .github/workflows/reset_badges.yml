@@ -14,8 +14,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          
+      - name: Install requests
+        run: pip install requests
+        
       - name: Run reset script
         run: python reset_badges.py
+        
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
