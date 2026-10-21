@@ -141,7 +141,6 @@ def main():
     updated_animes = []
     
     for anime_name, seasons in links.items():
-        # 🎯 YAHAN HAI PAKKA FIX: Sirf 100% exact naam match karega
         found_anime = None
         for a in anime_db:
             if a.get("name", "").strip().lower() == anime_name.strip().lower():
@@ -158,48 +157,48 @@ def main():
             found_anime["seasons"] = {}
         
         anime_updated = False
-              for season_num, eps in seasons.items():
-                     sk = f"s{season_num}"
-    
-                 # 🎯 NAYA FIX: Check karo ki naam aur season match kar rahe hain ya nahi
-                 anime_name_lower = found_anime.get("name", "").lower()
-    
-                # Agar links.txt me S2 hai, lekin animeData me anime S1 hai, toh skip karo
-                if season_num == 2 and ("season 2" not in anime_name_lower and " ii" not in anime_name_lower):
-                       print(f"❌ Galti pakdi: '{found_anime.get('name')}' (S1) me S2 ka link daalne ki koshish. Skip.")
-                       continue
         
-                if season_num == 3 and ("season 3" not in anime_name_lower and " iii" not in anime_name_lower):
-                       print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S3 ka link daalne ki koshish. Skip.")
-                       continue
+        # 🎯 MOBILE PROOF FIX: Indentation issue solved using exec
+        code_to_run = """
+for season_num, eps in seasons.items():
+    sk = f"s{season_num}"
+    anime_name_lower = found_anime.get("name", "").lower()
+    
+    if season_num == 2 and ("season 2" not in anime_name_lower and " ii" not in anime_name_lower):
+        print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S2 ka link. Skip.")
+        continue
+        
+    if season_num == 3 and ("season 3" not in anime_name_lower and " iii" not in anime_name_lower):
+        print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S3 ka link. Skip.")
+        continue
 
-                # Agar check pass ho gaya, toh naya block banao (agar nahi hai toh)
-                if sk not in found_anime["seasons"]:
-                       found_anime["seasons"][sk] = {
-                             "seasonName": f"Season {season_num}",
-                             "seasonZip": "",
-                             "episodes": []
-                     }
-            
-            existing_eps = found_anime["seasons"][sk]["episodes"]
-            for new_ep in eps:
-                existing = next((e for e in existing_eps if e["ep"] == new_ep["ep"]), None)
-                if existing:
-                    existing["link"] = new_ep["link"]
-                    existing["download"] = new_ep["download"]
-                    print(f"Update: {anime_name} S{season_num}E{new_ep['ep']}")
-                else:
-                    existing_eps.append({
-                        "ep": new_ep["ep"],
-                        "title": f"Episode {new_ep['ep']}",
-                        "link": new_ep["link"],
-                        "download": new_ep["download"]
-                    })
-                    print(f"Add: {anime_name} S{season_num}E{new_ep['ep']}")
-                added += 1
-                anime_updated = True
-            
-            existing_eps.sort(key=lambda x: x["ep"])
+    if sk not in found_anime["seasons"]:
+        found_anime["seasons"][sk] = {
+            "seasonName": f"Season {season_num}",
+            "seasonZip": "",
+            "episodes": []
+        }
+    
+    existing_eps = found_anime["seasons"][sk]["episodes"]
+    for new_ep in eps:
+        existing = next((e for e in existing_eps if e["ep"] == new_ep["ep"]), None)
+        if existing:
+            existing["link"] = new_ep["link"]
+            existing["download"] = new_ep["download"]
+            print(f"Update: {anime_name} S{season_num}E{new_ep['ep']}")
+        else:
+            existing_eps.append({
+                "ep": new_ep["ep"],
+                "title": f"Episode {new_ep['ep']}",
+                "link": new_ep["link"],
+                "download": new_ep["download"]
+            })
+            print(f"Add: {anime_name} S{season_num}E{new_ep['ep']}")
+        added += 1
+        anime_updated = True
+    existing_eps.sort(key=lambda x: x["ep"])
+"""
+        exec(code_to_run)
         
         if anime_updated:
             found_anime["addedDate"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
