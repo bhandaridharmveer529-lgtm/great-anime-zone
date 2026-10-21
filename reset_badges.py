@@ -32,7 +32,6 @@ def main():
 
     start = content.find("const animeDatabase = [")
     if start == -1:
-        print("animeDatabase nahi mila")
         return
     start = content.find("[", start)
     depth, end = 0, -1
@@ -45,18 +44,11 @@ def main():
                 end = i + 1
                 break
 
-    try:
-        anime_db = json.loads(content[start:end])
-    except Exception as e:
-        print(f"Parse error: {e}")
-        return
+    anime_db = json.loads(content[start:end])
 
     for anime in anime_db:
         eps_val = str(anime.get("eps", 0) or 0)
-        if eps_val.isdigit():
-            total_eps = int(eps_val)
-        else:
-            total_eps = 0
+        total_eps = int(eps_val) if eps_val.isdigit() else 0
 
         current_count = 0
         max_ep = 0
@@ -78,26 +70,17 @@ def main():
         if current_count == 0:
             anime["latestUpdate"] = "New Ep Added"
             anime["isSeasonCompleted"] = False
-            anime["isNewEp"] = False
         elif total_eps > 0 and current_count >= total_eps:
             anime["latestUpdate"] = "Completed"
             anime["isSeasonCompleted"] = True
-            anime["isNewEp"] = False
         else:
-            if latest_season > 1:
-                anime["latestUpdate"] = f"S{latest_season} EP {max_ep} Added"
-            else:
-                anime["latestUpdate"] = f"EP {max_ep} Added"
-                
+            anime["latestUpdate"] = f"S{latest_season} EP {max_ep} Added" if latest_season > 1 else f"EP {max_ep} Added"
             anime["isSeasonCompleted"] = False
-            anime["isNewEp"] = True
-
-        print(f"{anime.get('name')}: {anime.get('latestUpdate')} (Total: {total_eps}, Added: {current_count})")
 
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
-    s = update_github(new_content, sha, "Badges reset successfully")
-    print(f"\nGitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
+    s = update_github(new_content, sha, "Auto badge update")
+    print(f"GitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
 
 if __name__ == "__main__":
     main()
