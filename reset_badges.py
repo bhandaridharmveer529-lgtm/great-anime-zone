@@ -1,14 +1,41 @@
+import os
+import re
 import json
+import base64
+import requests
 
-DATA_FILE = "animeData.js"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+GITHUB_REPO = "bhandaridharmveer529-lgtm/great-anime-zone"
+GITHUB_FILE = "animeData.js"
 
-def read_existing_data():
-    with open(DATA_FILE, "r", encoding="utf-8") as f:
-        content = f.read()
+def get_github_file():
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE}"
+    r = requests.get(url, headers={"Authorization": f"token {GITHUB_TOKEN}"})
+    if r.status_code != 200:
+        print(f"GitHub error: {r.status_code}")
+        return None, None
+    d = r.json()
+    return requests.get(d["download_url"]).text, d["sha"]
+
+def update_github(content, sha, msg):
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE}"
+    enc = base64.b64encode(content.encode()).decode()
+    r = requests.put(url, headers={"Authorization": f"token {GITHUB_TOKEN}"},
+                     json={"message": msg, "content": enc, "sha": sha})
+    return r.status_code
+
+def main():
+    print("Resetting badges...")
+    content, sha = get_github_file()
+    if not content:
+        return
+
     start = content.find("const animeDatabase = [")
+    if start == -1:
+        print("animeDatabase nahi mila")
+        return
     start = content.find("[", start)
-    depth = 0
-    end = -1
+    depth, end = 0, -1
     for i in range(start, len(content)):
         if content[i] == "[":
             depth += 1
@@ -17,47 +44,60 @@ def read_existing_data():
             if depth == 0:
                 end = i + 1
                 break
-    return json.loads(content[start:end]), content, start, end
 
-def main():
-    anime_db, content, start, end = read_existing_data()
-    
+    try:
+        anime_db = json.loads(content[start:end])
+    except Exception as e:
+        print(f"Parse error: {e}")
+        return
+
     for anime in anime_db:
         eps_val = str(anime.get("eps", 0) or 0)
-if eps_val.isdigit():
-    total_eps = int(eps_val)
-else:
-    total_eps = 0
-        
+        if eps_val.isdigit():
+            total_eps = int(eps_val)
+        else:
+            total_eps = 0
+
         current_count = 0
         max_ep = 0
+        latest_season = 1
+
         if "seasons" in anime:
-            for season in anime["seasons"].values():
-                for ep in season.get("episodes", []):
+            for season_key, season_data in anime["seasons"].items():
+                season_num = 1
+                if season_key.startswith("s") and season_key[1:].isdigit():
+                    season_num = int(season_key[1:])
+
+                for ep in season_data.get("episodes", []):
                     if ep.get("link") and ep.get("link") != "":
                         current_count += 1
-                        if ep.get("ep", 0) > max_ep:
+                        if ep.get("ep", 0) >= max_ep:
                             max_ep = ep.get("ep", 0)
-        
+                            latest_season = season_num
+
         if current_count == 0:
             anime["latestUpdate"] = "New Ep Added"
             anime["isSeasonCompleted"] = False
+            anime["isNewEp"] = False
         elif total_eps > 0 and current_count >= total_eps:
             anime["latestUpdate"] = "Completed"
             anime["isSeasonCompleted"] = True
+            anime["isNewEp"] = False
         else:
-            anime["latestUpdate"] = f"EP {max_ep} Added"
+            if latest_season > 1:
+                anime["latestUpdate"] = f"S{latest_season} EP {max_ep} Added"
+            else:
+                anime["latestUpdate"] = f"EP {max_ep} Added"
+                
             anime["isSeasonCompleted"] = False
-        
-        print(f"{anime['name']}: {anime['latestUpdate']} (Total: {total_eps}, Added: {current_count})")
-    
+            anime["isNewEp"] = True
+
+        print(f"{anime.get('name')}: {anime.get('latestUpdate')} (Total: {total_eps}, Added: {current_count})")
+
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
-    
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        f.write(new_content)
-    
-    print("\n✅ Saare badges reset ho gaye!")
+    s = update_github(new_content, sha, "Badges reset successfully")
+    print(f"\nGitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
 
 if __name__ == "__main__":
     main()
