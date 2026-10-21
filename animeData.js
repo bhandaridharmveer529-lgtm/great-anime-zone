@@ -450,7 +450,7 @@ const animeDatabase = [
         "rating": "8.2",
         "year": "2021",
         "eps": "23",
-        "addedDate": "2026-09-21 00:00:00",
+        "addedDate": "2026-10-21 12:22:55",
         "latestUpdate": "Completed",
         "isSeasonCompleted": true,
         "desc": "When a 34-year-old underachiever gets run over by a bus, his story doesn’t end there. Reincarnated in a new world as an infant, Rudeus will seize every opportunity to live the life he’s always wanted. Armed with new friends, some freshly acquired magical abilities, and the courage to do the things he’s always dreamed of, he’s embarking on an epic adventure—with all of his past experience intact!\n  \n(Source: Funimation, edited)\n  \nNote: The anime pre-screened its 1st and 2nd episode starting on the 27th of December on the Nico Nico Live Broadcasting and D Anime Store services<i/>",
@@ -671,8 +671,8 @@ const animeDatabase = [
         "rating": "8.1",
         "year": "2023",
         "eps": "25",
-        "addedDate": "2026-10-21 07:15:02",
-        "latestUpdate": "S2 EP 17 Added",
+        "addedDate": "2026-10-21 12:22:55",
+        "latestUpdate": "S2 EP 24 Added",
         "isSeasonCompleted": false,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
         "genres": [
@@ -788,6 +788,48 @@ const animeDatabase = [
                         "title": "Episode 17",
                         "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/62?hash=629ab3",
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/62?hash=629ab3"
+                    },
+                    {
+                        "ep": 18,
+                        "title": "Episode 18",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/63?hash=267584",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/63?hash=267584"
+                    },
+                    {
+                        "ep": 19,
+                        "title": "Episode 19",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/64?hash=f8380f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/64?hash=f8380f"
+                    },
+                    {
+                        "ep": 20,
+                        "title": "Episode 20",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/65?hash=a6ebb9",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/65?hash=a6ebb9"
+                    },
+                    {
+                        "ep": 21,
+                        "title": "Episode 21",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/66?hash=301ba9",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/66?hash=301ba9"
+                    },
+                    {
+                        "ep": 22,
+                        "title": "Episode 22",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/67?hash=44a47c",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/67?hash=44a47c"
+                    },
+                    {
+                        "ep": 23,
+                        "title": "Episode 23",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/68?hash=ade50d",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/68?hash=ade50d"
+                    },
+                    {
+                        "ep": 24,
+                        "title": "Episode 24",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/69?hash=ab258f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/69?hash=ab258f"
                     }
                 ]
             }
