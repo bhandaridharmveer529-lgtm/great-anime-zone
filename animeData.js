@@ -623,7 +623,7 @@ const animeDatabase = [
         "rating": "8.1",
         "year": "2023",
         "eps": "25",
-        "addedDate": "2026-10-21 16:01:45",
+        "addedDate": "2026-10-21 16:23:15",
         "latestUpdate": "S2 EP 24 Added",
         "isSeasonCompleted": false,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
@@ -642,8 +642,153 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link": ""
-                    }                           
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/53?hash=b5b45e",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/53?hash=b5b45e"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/52?hash=a4fb82",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/52?hash=a4fb82"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/51?hash=83e9a3",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/51?hash=83e9a3"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/54?hash=b8ea18",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/54?hash=b8ea18"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/50?hash=131ac5",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/50?hash=131ac5"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/46?hash=dc0b2b",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/46?hash=dc0b2b"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/48?hash=1657cd",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/48?hash=1657cd"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/49?hash=526c30",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/49?hash=526c30"
+                    },
+                    {
+                        "ep": 9,
+                        "title": "Episode 9",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/47?hash=6a7926",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/47?hash=6a7926"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/55?hash=bfbc8f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/55?hash=bfbc8f"
+                    },
+                    {
+                        "ep": 11,
+                        "title": "Episode 11",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/70?hash=d03d04",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/70?hash=d03d04"
+                    },
+                    {
+                        "ep": 12,
+                        "title": "Episode 12",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/56?hash=cd3795",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/56?hash=cd3795"
+                    },
+                    {
+                        "ep": 13,
+                        "title": "Episode 13",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/57?hash=7d6f80",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/57?hash=7d6f80"
+                    },
+                    {
+                        "ep": 14,
+                        "title": "Episode 14",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/58?hash=1ebe69",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/58?hash=1ebe69"
+                    },
+                    {
+                        "ep": 15,
+                        "title": "Episode 15",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/59?hash=3957c0",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/59?hash=3957c0"
+                    },
+                    {
+                        "ep": 16,
+                        "title": "Episode 16",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/60?hash=d0ca10",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/60?hash=d0ca10"
+                    },
+                    {
+                        "ep": 17,
+                        "title": "Episode 17",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/61?hash=090ac0",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/61?hash=090ac0"
+                    },
+                    {
+                        "ep": 18,
+                        "title": "Episode 18",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/62?hash=629ab3",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/62?hash=629ab3"
+                    },
+                    {
+                        "ep": 19,
+                        "title": "Episode 19",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/63?hash=267584",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/63?hash=267584"
+                    },
+                    {
+                        "ep": 20,
+                        "title": "Episode 20",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/64?hash=f8380f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/64?hash=f8380f"
+                    },
+                    {
+                        "ep": 21,
+                        "title": "Episode 21",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/65?hash=a6ebb9",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/65?hash=a6ebb9"
+                    },
+                    {
+                        "ep": 22,
+                        "title": "Episode 22",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/66?hash=301ba9",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/66?hash=301ba9"
+                    },
+                    {
+                        "ep": 23,
+                        "title": "Episode 23",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/67?hash=44a47c",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/67?hash=44a47c"
+                    },
+                    {
+                        "ep": 24,
+                        "title": "Episode 24",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/68?hash=ade50d",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/68?hash=ade50d"
+                    },
+                    {
+                        "ep": 25,
+                        "title": "Episode 25",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/69?hash=ab258f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/69?hash=ab258f"
+                    }
                 ]
             }
         },
