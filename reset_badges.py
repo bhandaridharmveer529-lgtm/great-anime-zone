@@ -23,7 +23,11 @@ def main():
     anime_db, content, start, end = read_existing_data()
     
     for anime in anime_db:
-        total_eps = int(anime.get("eps", 0) or 0)
+        eps_val = str(anime.get("eps", 0) or 0)
+if eps_val.isdigit():
+    total_eps = int(eps_val)
+else:
+    total_eps = 0
         
         current_count = 0
         max_ep = 0
