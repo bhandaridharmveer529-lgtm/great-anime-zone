@@ -4,15 +4,11 @@ import json
 import base64
 import requests
 from datetime import datetime
-from difflib import SequenceMatcher
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 GITHUB_REPO = "bhandaridharmveer529-lgtm/great-anime-zone"
 GITHUB_FILE = "animeData.js"
 LINKS_FILE = "links.txt"
-
-def similarity(a, b):
-    return SequenceMatcher(None, a.lower().strip(), b.lower().strip()).ratio()
 
 def recalc_badge(anime):
     try:
@@ -141,12 +137,23 @@ def main():
     updated_animes = []
     
     for anime_name, seasons in links.items():
+        
+        # 🎯 STRICT EXACT MATCH (No fuzzy logic)
         found_anime = None
+        
+        # 1. Pehle exact 'name' match karo
         for a in anime_db:
             if a.get("name", "").strip().lower() == anime_name.strip().lower():
                 found_anime = a
                 break
                 
+        # 2. Agar 'name' na mile, toh 'romaji_name' exact match karo
+        if not found_anime:
+            for a in anime_db:
+                if a.get("romaji_name", "").strip().lower() == anime_name.strip().lower():
+                    found_anime = a
+                    break
+
         if not found_anime:
             print(f"❌ Exact match nahi mila: '{anime_name}' (Skip kiya)")
             continue
@@ -158,7 +165,7 @@ def main():
         
         anime_updated = False
         
-        # 🔥 MOBILE PROOF FIX: Using while loop and list to avoid indentation issues
+        # 🔥 WHILE LOOP (Indentation proof)
         season_items = list(seasons.items())
         s_idx = 0
         while s_idx < len(season_items):
