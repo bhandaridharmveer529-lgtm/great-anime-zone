@@ -1,5 +1,4 @@
 import os
-import re
 import json
 import base64
 import requests
@@ -10,7 +9,9 @@ GITHUB_FILE = "animeData.js"
 
 def get_github_file():
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE}"
-    r = requests.get(url, headers={"Authorization": f"token {GITHUB_TOKEN}"})
+    # Cache bypass karne ke liye header add kiya hai
+    headers = {"Authorization": f"token {GITHUB_TOKEN}", "Cache-Control": "no-cache"}
+    r = requests.get(url, headers=headers)
     if r.status_code != 200:
         print(f"GitHub error: {r.status_code}")
         return None, None
@@ -32,6 +33,7 @@ def main():
 
     start = content.find("const animeDatabase = [")
     if start == -1:
+        print("animeDatabase nahi mila")
         return
     start = content.find("[", start)
     depth, end = 0, -1
@@ -44,13 +46,13 @@ def main():
                 end = i + 1
                 break
 
-    anime_db = json.loads(content[start:end])
+    try:
+        anime_db = json.loads(content[start:end])
+    except Exception as e:
+        print(f"Parse error: {e}")
+        return
 
     for anime in anime_db:
-        eps_val = str(anime.get("eps", 0) or 0)
-        total_eps = int(eps_val) if eps_val.isdigit() else 0
-
-        current_count = 0
         max_ep = 0
         latest_season = 1
 
@@ -61,21 +63,34 @@ def main():
                     season_num = int(season_key[1:])
 
                 for ep in season_data.get("episodes", []):
+                    # 🎯 SIRF UNHI EPISODES KO COUNT KARO JINME LINK HAI
                     if ep.get("link") and ep.get("link") != "":
-                        current_count += 1
                         if ep.get("ep", 0) >= max_ep:
                             max_ep = ep.get("ep", 0)
                             latest_season = season_num
 
-        if current_count == 0:
+        if max_ep == 0:
             anime["latestUpdate"] = "New Ep Added"
             anime["isSeasonCompleted"] = False
-        elif total_eps > 0 and current_count >= total_eps:
-            anime["latestUpdate"] = "Completed"
-            anime["isSeasonCompleted"] = True
+            anime["isNewEp"] = False
         else:
-            anime["latestUpdate"] = f"S{latest_season} EP {max_ep} Added" if latest_season > 1 else f"EP {max_ep} Added"
-            anime["isSeasonCompleted"] = False
+            eps_val = str(anime.get("eps", 0) or 0)
+            total_eps = int(eps_val) if eps_val.isdigit() else 0
+            
+            # 🎯 LOGIC: Agar max_ep total_eps ke barabar ya bada hai, toh Completed
+            if total_eps > 0 and max_ep >= total_eps:
+                anime["latestUpdate"] = "Completed"
+                anime["isSeasonCompleted"] = True
+                anime["isNewEp"] = False
+            else:
+                if latest_season > 1:
+                    anime["latestUpdate"] = f"S{latest_season} EP {max_ep} Added"
+                else:
+                    anime["latestUpdate"] = f"EP {max_ep} Added"
+                anime["isSeasonCompleted"] = False
+                anime["isNewEp"] = True
+
+        print(f"{anime.get('name')}: {anime.get('latestUpdate')} (Max EP: {max_ep}, Total: {anime.get('eps')})")
 
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
