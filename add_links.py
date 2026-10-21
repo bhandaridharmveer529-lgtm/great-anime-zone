@@ -138,7 +138,7 @@ def main():
     
     for anime_name, seasons in links.items():
         
-        # 🎯 STRICT EXACT MATCH (No fuzzy logic)
+        # 🎯 STRICT EXACT MATCH (Fuzzy logic poora hata diya)
         found_anime = None
         
         # 1. Pehle exact 'name' match karo
@@ -165,7 +165,7 @@ def main():
         
         anime_updated = False
         
-        # 🔥 WHILE LOOP (Indentation proof)
+        # WHILE LOOP (Mobile Proof)
         season_items = list(seasons.items())
         s_idx = 0
         while s_idx < len(season_items):
@@ -173,22 +173,18 @@ def main():
             sk = f"s{season_num}"
             anime_name_lower = found_anime.get("name", "").lower()
             
-            skip_season = False
-            
-            if season_num == 2:
-                if "season 2" not in anime_name_lower and " ii" not in anime_name_lower:
-                    print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S2 ka link. Skip.")
-                    skip_season = True
-                    
-            if season_num == 3:
-                if "season 3" not in anime_name_lower and " iii" not in anime_name_lower:
-                    print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S3 ka link. Skip.")
-                    skip_season = True
-            
-            if skip_season:
+            # Agar naam me S2 likha hai, aur season S1 hai, toh skip
+            if season_num == 2 and ("season 2" not in anime_name_lower and " ii" not in anime_name_lower):
+                print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S2 ka link. Skip.")
+                s_idx += 1
+                continue
+                
+            if season_num == 3 and ("season 3" not in anime_name_lower and " iii" not in anime_name_lower):
+                print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S3 ka link. Skip.")
                 s_idx += 1
                 continue
 
+            # Block banao agar nahi hai
             if sk not in found_anime["seasons"]:
                 found_anime["seasons"][sk] = {
                     "seasonName": f"Season {season_num}",
@@ -225,10 +221,14 @@ def main():
             found_anime["addedDate"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             updated_animes.append(found_anime.get("name"))
     
-    print("\n=== Saare anime ke badges recalculate ===")
-    for anime in anime_db:
-        recalc_badge(anime)
-        print(f"  {anime.get('name')}: {anime.get('latestUpdate')}")
+    # Badge recalculate SIRF un anime ke liye jinke links aaye hain
+    print("\n=== Badge recalculate (Sirf links.txt wale anime) ===")
+    for anime_name in links.keys():
+        for anime in anime_db:
+            if anime.get("name", "").strip().lower() == anime_name.strip().lower():
+                recalc_badge(anime)
+                print(f"  {anime.get('name')}: {anime.get('latestUpdate')}")
+                break
     
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
