@@ -135,3 +135,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    import reset_badges 
+    reset_badges.main()
