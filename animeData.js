@@ -826,7 +826,7 @@ const animeDatabase = [
         "rating": "8.6",
         "year": "2026",
         "eps": "14",
-        "addedDate": "2026-10-22 03:17:41",
+        "addedDate": "2026-10-22 03:29:25",
         "latestUpdate": "S3 EP 2 Added",
         "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
