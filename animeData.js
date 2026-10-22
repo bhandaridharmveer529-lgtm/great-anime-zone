@@ -838,8 +838,8 @@ const animeDatabase = [
         "rating": "8.6",
         "year": "2026",
         "eps": "14",
-        "addedDate": "2026-10-22 03:29:25",
-        "latestUpdate": "S3 EP 2 Added",
+        "addedDate": "2026-10-22 03:35:21",
+        "latestUpdate": "S3 EP 4 Added",
         "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
         "genres": [
@@ -865,6 +865,18 @@ const animeDatabase = [
                         "title": "Episode 2",
                         "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/72?hash=1fc632",
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/72?hash=1fc632"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/73?hash=f6944f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/73?hash=f6944f"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/74?hash=f7e389",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/74?hash=f7e389"
                     }
                 ]
             }
