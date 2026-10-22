@@ -641,7 +641,7 @@ const animeDatabase = [
         "rating": "8.1",
         "year": "2023",
         "eps": "25",
-        "addedDate": "2026-10-22 03:01:20",
+        "addedDate": "2026-10-22 02:53:11",
         "latestUpdate": "Completed",
         "isSeasonCompleted": true,
         "desc": "After his relationship with Eris Boreas Greyrat reaches new heights, Rudeus Greyrat is ecstatic. Unfortunately, his joy is short-lived, as Eris suddenly abandons him to embark on her own journey. Believing that Eris has lost all interest in him, a heartbroken and depressed Rudeus sets forth to the Northern Territories. With his sole goal being to locate his mother on the vast continent, Rudeus wonders if persisting through daily life is worth the pain, falling into a robotic routine as he endlessly ruminates on his lost love.\n  \nHowever, the dangers of the North soon prove that one cannot survive with a dulled mind. While on a quest with the party Counter Arrow, with whom he recently became acquainted, Rudeus has a brush with death—an experience that forces him to finally snap out of his despair. With his newfound teammates, Rudeus rediscovers the pleasure of daily adventuring and moves forward with his original goal of living his second lease on life to the fullest.\n  \n(Source: MAL Rewrite)\n  \nNote: Includes episode 0, Shugo Jutsushi Fitz.",
@@ -826,8 +826,8 @@ const animeDatabase = [
         "rating": "8.6",
         "year": "2026",
         "eps": "14",
-        "addedDate": "2026-10-22 03:01:20",
-        "latestUpdate": "New Ep Added",
+        "addedDate": "2026-10-22 02:53:11",
+        "latestUpdate": "S3 EP 2 Added",
         "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
         "genres": [
@@ -859,7 +859,7 @@ const animeDatabase = [
         },
         "isNew": false,
         "isTrending": true,
-        "isNewEp": false
+        "isNewEp": true
     },
     {
         "id": 6577,
