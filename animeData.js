@@ -94,9 +94,9 @@ const animeDatabase = [
         "rating": "8.0",
         "year": "2024",
         "eps": "12",
-        "addedDate": "2026-10-16",
-        "latestUpdate": "New Ep Added",
-        "isSeasonCompleted": false,
+        "addedDate": "2026-10-22 14:15:32",
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
         "desc": "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Seong Jin-U. After being brutally slaughtered by monsters in a high-ranking dungeon, Jin-U came back with the System, a program only he could see, that’s leveling him up in every way. Now, he’s inspired to discover the secrets behind his powers and the dungeon that spawned them. \n \n(Source: Crunchyroll)",
         "genres": [
             "Action",
@@ -112,37 +112,38 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link": ""
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/79?hash=a0df1d",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/79?hash=a0df1d"
                     },
                     {
                         "ep": 2,
                         "title": "Episode 2",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/154?hash=1d7f7a",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/154?hash=1d7f7a"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/80?hash=d4b376",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/80?hash=d4b376"
                     },
                     {
                         "ep": 3,
                         "title": "Episode 3",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/155?hash=2a79ea",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/155?hash=2a79ea"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/81?hash=2ce6fd",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/81?hash=2ce6fd"
                     },
                     {
                         "ep": 4,
                         "title": "Episode 4",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/156?hash=1c9ac0",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/156?hash=1c9ac0"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/82?hash=f5c61f",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/82?hash=f5c61f"
                     },
                     {
                         "ep": 5,
                         "title": "Episode 5",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/157?hash=6c4b76",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/157?hash=6c4b76"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/83?hash=8e5d0b",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/83?hash=8e5d0b"
                     },
                     {
                         "ep": 6,
                         "title": "Episode 6",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/158?hash=064096",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/158?hash=064096"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/84?hash=ae51ae",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/84?hash=ae51ae"
                     },
                     {
                         "ep": 7,
@@ -929,7 +930,7 @@ const animeDatabase = [
         "rating": "8.6",
         "year": "2026",
         "eps": "14",
-        "addedDate": "2026-10-22 07:26:56",
+        "addedDate": "2026-10-22 14:15:32",
         "latestUpdate": "S3 EP 8 Added",
         "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
