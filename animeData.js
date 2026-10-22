@@ -605,6 +605,24 @@ const animeDatabase = [
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/37?hash=ad2af3"
                     }
                 ]
+            },
+            "s3": {
+                "seasonName": "Season 3",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/137?hash=3988c7",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/137?hash=3988c7"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/138?hash=013d40",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/138?hash=013d40"
+                    }
+                ]
             }
         },
         "isNew": false,
