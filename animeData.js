@@ -113,8 +113,75 @@ const animeDatabase = [
                         "ep": 1,
                         "title": "Episode 1",
                         "link": ""
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/154?hash=1d7f7a",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/154?hash=1d7f7a"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/155?hash=2a79ea",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/155?hash=2a79ea"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/156?hash=1c9ac0",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/156?hash=1c9ac0"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/157?hash=6c4b76",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/157?hash=6c4b76"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/158?hash=064096",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/158?hash=064096"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/165?hash=976652",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/165?hash=976652"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/166?hash=7e7757",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/166?hash=7e7757"
+                    },
+                    {
+                        "ep": 9,
+                        "title": "Episode 9",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/167?hash=5878a7",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/167?hash=5878a7"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/168?hash=006f52",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/168?hash=006f52"
+                    },
+                    {
+                        "ep": 11,
+                        "title": "Episode 11",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/169?hash=363663",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/169?hash=363663"
+                    },
+                    {
+                        "ep": 12,
+                        "title": "Episode 12",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/170?hash=149e96",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/170?hash=149e96"
                     }
-                ]
+                ],
+                "seasonCompleted": true
             }
         },
         "isNew": false,
