@@ -645,6 +645,18 @@ const animeDatabase = [
                         "title": "Episode 6",
                         "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/146?hash=a5e001",
                         "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/146?hash=a5e001"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/149?hash=f22170",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/149?hash=f22170"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/150?hash=7ef605",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/150?hash=7ef605"
                     }
                 ]
             }
