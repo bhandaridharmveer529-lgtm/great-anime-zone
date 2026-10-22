@@ -95,8 +95,8 @@ const animeDatabase = [
         "year": "2024",
         "eps": "12",
         "addedDate": "2026-10-22 14:15:52",
-        "latestUpdate": "Completed",
-        "isSeasonCompleted": true,
+        "latestUpdate": "ep6 add",
+        "isSeasonCompleted": false,
         "desc": "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Seong Jin-U. After being brutally slaughtered by monsters in a high-ranking dungeon, Jin-U came back with the System, a program only he could see, that’s leveling him up in every way. Now, he’s inspired to discover the secrets behind his powers and the dungeon that spawned them. \n \n(Source: Crunchyroll)",
         "genres": [
             "Action",
