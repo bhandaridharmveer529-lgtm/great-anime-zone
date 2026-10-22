@@ -69,27 +69,26 @@ def main():
         print(f"Parse error: {e}")
         return
 
-    added = 0
+    added_count = 0
+    updated_names = [] # Sirf inhi ka time badlega
+
     for anime_name, seasons in links.items():
-        # 🎯 SMART MATCH: Naam English ho ya Japanese, match ho jayega
+        # 🎯 SMART MATCH: English ya Japanese naam
         found_anime = None
         name_lower = anime_name.lower().strip()
         
         for a in anime_db:
             db_name = a.get("name", "").lower().strip()
             romaji = a.get("romaji_name", "").lower().strip()
-            
             if name_lower == db_name or name_lower == romaji:
                 found_anime = a
                 break
                 
         if not found_anime:
-            # Thoda flexible match (Part 2, Cour 2, III vs 3)
             clean_name = name_lower.replace("season ", "").replace(" iii", " 3").replace(" ii", " 2").replace("part ", "").replace("cour ", "").strip()
             for a in anime_db:
                 db_clean = a.get("name", "").lower().replace("season ", "").replace(" iii", " 3").replace(" ii", " 2").replace("part ", "").replace("cour ", "").strip()
                 romaji_clean = a.get("romaji_name", "").lower().replace("season ", "").replace(" iii", " 3").replace(" ii", " 2").replace("part ", "").replace("cour ", "").strip()
-                
                 if clean_name == db_clean or clean_name == romaji_clean:
                     found_anime = a
                     break
@@ -98,7 +97,12 @@ def main():
             print(f"❌ Skip: Match nahi mila '{anime_name}'")
             continue
 
-        print(f"✅ Matched: '{anime_name}' -> '{found_anime.get('name')}'")
+        # 🎯 STRICT RULE: Agar pehle se 'Completed' hai, toh isko chhedo mat
+        if found_anime.get("latestUpdate") == "Completed":
+            print(f"⏭️ Skipped (Already Completed): '{found_anime.get('name')}'")
+            continue
+
+        print(f"✅ Updating: '{anime_name}'")
         
         if "seasons" not in found_anime: found_anime["seasons"] = {}
 
@@ -116,15 +120,19 @@ def main():
                     existing["download"] = new_ep["download"]
                 else:
                     existing_eps.append({"ep": new_ep["ep"], "title": f"Episode {new_ep['ep']}", "link": new_ep["link"], "download": new_ep["download"]})
-                added += 1
+                added_count += 1
                 anime_updated = True
             existing_eps.sort(key=lambda x: x["ep"])
         
         if anime_updated:
             found_anime["addedDate"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            updated_names.append(found_anime.get("name"))
 
-    # 🎯 SMART BADGE RECALCULATE (Khud hi sahi badge laga dega)
+    # 🎯 BADGE UPDATE: Sirf unhi anime ka jo list me hain
     for anime in anime_db:
+        if anime.get("name") not in updated_names:
+            continue 
+
         max_ep = 0
         latest_season = 1
         if "seasons" in anime:
@@ -154,7 +162,7 @@ def main():
 
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
-    s = update_github(new_content, sha, f"Links update + Auto badges ({added} added)")
+    s = update_github(new_content, sha, f"Updated {added_count} eps. Only touched {len(updated_names)} anime.")
     print(f"\nGitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
 
 if __name__ == "__main__":
