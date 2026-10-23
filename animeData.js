@@ -937,7 +937,7 @@ const animeDatabase = [
         "rating": "8.6",
         "year": "2026",
         "eps": "14",
-        "addedDate": "2026-10-23 11:22:58",
+        "addedDate": "2026-10-23 11:38:51",
         "latestUpdate": "S3 EP 8 Added",
         "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
@@ -1060,9 +1060,9 @@ const animeDatabase = [
         "rating": "8.4",
         "year": "2025",
         "eps": "13",
-        "addedDate": "2026-10-23",
-        "latestUpdate": "New Ep Added",
-        "isSeasonCompleted": false,
+        "addedDate": "2026-10-23 11:38:51",
+        "latestUpdate": "Completed",
+        "isSeasonCompleted": true,
         "desc": "Mastering his new abilities in secret, Jin-U must battle humanity's toughest foes to save his mother.  \n\n(Source: Crunchyroll News)",
         "genres": [
             "Action",
@@ -1078,12 +1078,86 @@ const animeDatabase = [
                     {
                         "ep": 1,
                         "title": "Episode 1",
-                        "link": ""
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/91?hash=edd1c1",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/91?hash=edd1c1"
+                    },
+                    {
+                        "ep": 2,
+                        "title": "Episode 2",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/92?hash=4f7d68",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/92?hash=4f7d68"
+                    },
+                    {
+                        "ep": 3,
+                        "title": "Episode 3",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/93?hash=531cc5",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/93?hash=531cc5"
+                    },
+                    {
+                        "ep": 4,
+                        "title": "Episode 4",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/94?hash=2a1f57",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/94?hash=2a1f57"
+                    },
+                    {
+                        "ep": 5,
+                        "title": "Episode 5",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/95?hash=67aded",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/95?hash=67aded"
+                    },
+                    {
+                        "ep": 6,
+                        "title": "Episode 6",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/96?hash=39a1e3",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/96?hash=39a1e3"
+                    },
+                    {
+                        "ep": 7,
+                        "title": "Episode 7",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/97?hash=6fc9ec",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/97?hash=6fc9ec"
+                    },
+                    {
+                        "ep": 8,
+                        "title": "Episode 8",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/98?hash=db2531",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/98?hash=db2531"
+                    },
+                    {
+                        "ep": 9,
+                        "title": "Episode 9",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/99?hash=fd9222",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/99?hash=fd9222"
+                    },
+                    {
+                        "ep": 10,
+                        "title": "Episode 10",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/101?hash=1ea7ef",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/101?hash=1ea7ef"
+                    },
+                    {
+                        "ep": 11,
+                        "title": "Episode 11",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/100?hash=9353f2",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/100?hash=9353f2"
+                    },
+                    {
+                        "ep": 12,
+                        "title": "Episode 12",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/102?hash=05db59",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/102?hash=05db59"
+                    },
+                    {
+                        "ep": 13,
+                        "title": "Episode 13",
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/103?hash=d5d671",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/103?hash=d5d671"
                     }
                 ]
             }
         },
         "isNew": false,
-        "isTrending": true
+        "isTrending": true,
+        "isNewEp": false
     }
 ];
