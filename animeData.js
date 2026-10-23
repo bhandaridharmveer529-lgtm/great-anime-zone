@@ -287,8 +287,8 @@ const animeDatabase = [
         "rating": "8.4",
         "year": "2020",
         "eps": "24",
-        "addedDate": "2026-10-23 12:58:18",
-        "latestUpdate": "EP 8 Added",
+        "addedDate": "2026-10-23 13:29:42",
+        "latestUpdate": "EP 16 Added",
         "isSeasonCompleted": false,
         "desc": "A boy fights... for \"the right death.\" \n \nHardship, regret, shame: the negative feelings that humans feel become Curses that lurk in our everyday lives. The Curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. What's more, the Curses can only be exorcised by another Curse. \n \nItadori Yuji is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a friend who has been attacked by Curses, he eats the finger of the Double-Faced Specter, taking the Curse into his own soul. From then on, he shares one body with the Double-Faced Specter. Guided by the most powerful of sorcerers, Gojou Satoru, Itadori is admitted to the Tokyo Metropolitan Technical High School of Sorcery, an organization that fights the Curses... and thus begins the heroic tale of a boy who became a Curse to exorcise a Curse, a life from which he could never turn back.\n  \n(Source: Crunchyroll) \n \nNote: The first episode received an early web premiere on September 19th, 2020. The regular TV broadcast started on October 3rd, 2020.",
         "genres": [
@@ -353,50 +353,50 @@ const animeDatabase = [
                     {
                         "ep": 9,
                         "title": "Episode 9",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/219?hash=c0e190",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/219?hash=c0e190"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/112?hash=45aa47",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/112?hash=45aa47"
                     },
                     {
                         "ep": 10,
                         "title": "Episode 10",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/226?hash=9cfdf1",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/226?hash=9cfdf1"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/119?hash=351b48",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/119?hash=351b48"
                     },
                     {
                         "ep": 11,
                         "title": "Episode 11",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/225?hash=d1c38a",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/225?hash=d1c38a"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/118?hash=6c3e11",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/118?hash=6c3e11"
                     },
                     {
                         "ep": 12,
                         "title": "Episode 12",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/224?hash=13fe9d",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/224?hash=13fe9d"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/117?hash=91fa59",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/117?hash=91fa59"
                     },
                     {
                         "ep": 13,
                         "title": "Episode 13",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/223?hash=115f89",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/223?hash=115f89"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/116?hash=c5e84c",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/116?hash=c5e84c"
                     },
                     {
                         "ep": 14,
                         "title": "Episode 14",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/222?hash=bcbe33",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/222?hash=bcbe33"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/115?hash=1b8ee9",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/115?hash=1b8ee9"
                     },
                     {
                         "ep": 15,
                         "title": "Episode 15",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/221?hash=060ad9",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/221?hash=060ad9"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/114?hash=9f82be",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/114?hash=9f82be"
                     },
                     {
                         "ep": 16,
                         "title": "Episode 16",
-                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/220?hash=ec8ce6",
-                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/220?hash=ec8ce6"
+                        "link": "https://michelle-recognition-holder-stop.trycloudflare.com/stream/113?hash=3958a6",
+                        "download": "https://michelle-recognition-holder-stop.trycloudflare.com/dl/113?hash=3958a6"
                     }
                 ],
                 "seasonCompleted": true
@@ -1029,7 +1029,7 @@ const animeDatabase = [
         "rating": "8.6",
         "year": "2026",
         "eps": "14",
-        "addedDate": "2026-10-23 12:58:18",
+        "addedDate": "2026-10-23 13:29:42",
         "latestUpdate": "S3 EP 8 Added",
         "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
