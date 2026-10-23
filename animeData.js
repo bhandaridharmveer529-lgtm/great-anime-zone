@@ -190,12 +190,12 @@ const animeDatabase = [
                     }
                 ],
                 "seasonCompleted": true
-              }
-            },
-            "isNew": false,
-            "isTrending": true,
-            "isNewEp": false
-    },                  
+            }
+        },
+        "isNew": false,
+        "isTrending": true,
+        "isNewEp": false
+    },
     {
         "id": 67090,
         "romaji_name": "Shingeki no Kyojin",
@@ -937,7 +937,7 @@ const animeDatabase = [
         "rating": "8.6",
         "year": "2026",
         "eps": "14",
-        "addedDate": "2026-10-23 10:46:51",
+        "addedDate": "2026-10-23 11:22:58",
         "latestUpdate": "S3 EP 8 Added",
         "isSeasonCompleted": false,
         "desc": "The third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
