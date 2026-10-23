@@ -190,8 +190,12 @@ const animeDatabase = [
                     }
                 ],
                 "seasonCompleted": true
+              }
             },
-                        
+            "isNew": false,
+            "isTrending": true,
+            "isNewEp": false
+    },                  
     {
         "id": 67090,
         "romaji_name": "Shingeki no Kyojin",
