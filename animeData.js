@@ -1040,13 +1040,43 @@ const animeDatabase = [
         "isNew": false,
         "isTrending": true,
         "isNewEp": false
+    },
+    {
+        "id": 49823,
+        "romaji_name": "Ore dake Level Up na Ken: Season 2 - Arise from the Shadow",
+        "name": "Solo Leveling Season 2 -Arise from the Shadow-",
+        "title": "Solo Leveling Season 2 -Arise from the Shadow-",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176496-5oY4k2NRqlYs.jpg",
+        "img": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx176496-9BDMjAZGEbq4.png",
+        "sub": "Hindi Dubbed",
+        "lang": "Hindi Dubbed",
+        "rating": "8.4",
+        "year": "2025",
+        "eps": "13",
+        "addedDate": "2026-10-23",
+        "latestUpdate": "New Ep Added",
+        "isSeasonCompleted": false,
+        "desc": "Mastering his new abilities in secret, Jin-U must battle humanity's toughest foes to save his mother.  \n\n(Source: Crunchyroll News)",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "genre": "Action",
+        "seasons": {
+            "s2": {
+                "seasonName": "Season 2",
+                "seasonZip": "",
+                "episodes": [
+                    {
+                        "ep": 1,
+                        "title": "Episode 1",
+                        "link": ""
+                    }
+                ]
+            }
+        },
+        "isNew": false,
+        "isTrending": true
     }
-];
-
-const heroAnimeNames = [
-    "Naruto",
-    "Solo Leveling",
-    "Overlord",
-    "The Elusive Samurai",
-    "Mushoku Tensei: Jobless Reincarnation" // Ye naya add kar sakte ho
 ];
