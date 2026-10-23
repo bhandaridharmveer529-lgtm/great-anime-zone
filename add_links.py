@@ -70,31 +70,24 @@ def main():
         return
 
     added_count = 0
-    updated_names = [] # Sirf inhi ka time badlega
+    updated_names = []
 
     for anime_name, seasons in links.items():
-        # 🎯 SMART MATCH: English ya Japanese naam
+        # 🎯 STRICT EXACT MATCH (No smart logic, no fuzzy logic)
         found_anime = None
         name_lower = anime_name.lower().strip()
         
         for a in anime_db:
             db_name = a.get("name", "").lower().strip()
             romaji = a.get("romaji_name", "").lower().strip()
+            
+            # Sirf 100% exact match hoga
             if name_lower == db_name or name_lower == romaji:
                 found_anime = a
                 break
-                
-        if not found_anime:
-            clean_name = name_lower.replace("season ", "").replace(" iii", " 3").replace(" ii", " 2").replace("part ", "").replace("cour ", "").strip()
-            for a in anime_db:
-                db_clean = a.get("name", "").lower().replace("season ", "").replace(" iii", " 3").replace(" ii", " 2").replace("part ", "").replace("cour ", "").strip()
-                romaji_clean = a.get("romaji_name", "").lower().replace("season ", "").replace(" iii", " 3").replace(" ii", " 2").replace("part ", "").replace("cour ", "").strip()
-                if clean_name == db_clean or clean_name == romaji_clean:
-                    found_anime = a
-                    break
                     
         if not found_anime:
-            print(f"❌ Skip: Match nahi mila '{anime_name}'")
+            print(f"❌ Skip: Exact match nahi mila '{anime_name}'")
             continue
 
         # 🎯 STRICT RULE: Agar pehle se 'Completed' hai, toh isko chhedo mat
@@ -109,6 +102,17 @@ def main():
         anime_updated = False
         for season_num, eps in seasons.items():
             sk = f"s{season_num}"
+            
+            # 🎯 SEASON MATCH LOGIC: Agar anime S2 hai, toh uska season bhi s2 hi hona chahiye
+            anime_name_lower = found_anime.get("name", "").lower()
+            if season_num == 2 and ("season 2" not in anime_name_lower and " ii" not in anime_name_lower):
+                print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S2 ka link. Skip.")
+                continue
+                
+            if season_num == 3 and ("season 3" not in anime_name_lower and " iii" not in anime_name_lower):
+                print(f"❌ Galti pakdi: '{found_anime.get('name')}' me S3 ka link. Skip.")
+                continue
+
             if sk not in found_anime["seasons"]:
                 found_anime["seasons"][sk] = {"seasonName": f"Season {season_num}", "seasonZip": "", "episodes": []}
             
@@ -162,7 +166,7 @@ def main():
 
     new_db = json.dumps(anime_db, indent=4, ensure_ascii=False)
     new_content = content[:start] + new_db + content[end:]
-    s = update_github(new_content, sha, f"Updated {added_count} eps. Only touched {len(updated_names)} anime.")
+    s = update_github(new_content, sha, f"Strict Update: {added_count} eps. Only exact names touched.")
     print(f"\nGitHub: {'Updated!' if s in [200,201] else 'Failed: ' + str(s)}")
 
 if __name__ == "__main__":
